@@ -1,6 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #1C2B3A;
+  --color-navy-light: #263d52;
+  --color-navy-dark: #131f29;
+  --color-ember: #C96A3A;
+  --color-ember-light: #d8825a;
+  --color-ember-dark: #a8542d;
+  --color-sage: #5C8272;
+  --color-sage-light: #7a9e8d;
+  --color-sage-dark: #456659;
+  --color-slate-warm: #6B7A8D;
+  --color-parchment: #F5F1EB;
+  --color-parchment-dark: #EAE6DE;
+
+  --font-display: var(--font-cormorant), "Georgia", serif;
+  --font-body: var(--font-jost), "system-ui", sans-serif;
+  --font-mono: var(--font-jetbrains), monospace;
+}
 
 @layer base {
   html {
@@ -16,26 +33,24 @@
   }
 }
 
-@layer components {
-  .btn-primary {
-    @apply inline-flex items-center gap-2 bg-ember text-parchment px-6 py-3 text-sm font-body font-medium tracking-wide
-           hover:bg-ember-dark transition-colors duration-200 rounded-sm;
-  }
+@utility btn-primary {
+  @apply inline-flex items-center gap-2 bg-ember text-parchment px-6 py-3 text-sm font-body font-medium tracking-wide
+         hover:bg-ember-dark transition-colors duration-200 rounded-xs cursor-pointer;
+}
 
-  .btn-outline {
-    @apply inline-flex items-center gap-2 border border-navy text-navy px-6 py-3 text-sm font-body font-medium tracking-wide
-           hover:bg-navy hover:text-parchment transition-colors duration-200 rounded-sm;
-  }
+@utility btn-outline {
+  @apply inline-flex items-center gap-2 border border-navy text-navy px-6 py-3 text-sm font-body font-medium tracking-wide
+         hover:bg-navy hover:text-parchment transition-colors duration-200 rounded-xs cursor-pointer;
+}
 
-  .section-label {
-    @apply text-ember text-xs font-body font-medium tracking-[0.2em] uppercase;
-  }
+@utility section-label {
+  @apply text-ember text-xs font-body font-medium tracking-[0.2em] uppercase;
+}
 
-  .section-heading {
-    @apply font-display text-4xl md:text-5xl font-light text-navy leading-tight;
-  }
+@utility section-heading {
+  @apply font-display text-4xl md:text-5xl font-light text-navy leading-tight;
+}
 
-  .card {
-    @apply bg-white border border-parchment-dark rounded-sm p-8;
-  }
+@utility card {
+  @apply bg-white border border-parchment-dark rounded-xs p-8;
 }
