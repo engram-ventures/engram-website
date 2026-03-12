@@ -41,7 +41,7 @@ export default function ContactPage() {
   };
 
   const inputClass =
-    "w-full bg-white border border-parchment-dark rounded-sm px-4 py-3 font-body text-sm font-light text-navy placeholder:text-slate-warm/60 focus:outline-none focus:border-ember transition-colors";
+    "w-full bg-white border border-parchment-dark rounded-xs px-4 py-3 font-body text-sm font-light text-navy placeholder:text-slate-warm/60 focus:outline-hidden focus:border-ember transition-colors";
 
   return (
     <>
@@ -66,7 +66,7 @@ export default function ContactPage() {
             {/* Form */}
             <div className="md:col-span-3">
               {formState === "success" ? (
-                <div className="bg-white border border-parchment-dark rounded-sm p-12 text-center">
+                <div className="bg-white border border-parchment-dark rounded-xs p-12 text-center">
                   <div className="text-4xl text-sage mb-6">◆</div>
                   <h2 className="font-display text-3xl font-light text-navy mb-4">
                     Message received.
@@ -77,7 +77,7 @@ export default function ContactPage() {
                   </p>
                 </div>
               ) : (
-                <div className="bg-white border border-parchment-dark rounded-sm p-10">
+                <div className="bg-white border border-parchment-dark rounded-xs p-10">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                     <div>
                       <label className="section-label block mb-2">Name</label>
@@ -195,7 +195,7 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <div className="bg-navy rounded-sm p-8">
+              <div className="bg-navy rounded-xs p-8">
                 <div className="font-display text-2xl font-light text-parchment italic leading-snug mb-6">
                   &ldquo;Strategy that sticks.&rdquo;
                 </div>

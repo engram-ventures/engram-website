@@ -103,7 +103,7 @@ export default function Home() {
               <Link
                 key={s.name}
                 href={s.href}
-                className="card group hover:border-ember/40 hover:shadow-sm transition-all duration-200"
+                className="card group hover:border-ember/40 hover:shadow-xs transition-all duration-200"
               >
                 <div className="text-2xl text-ember mb-6">{s.icon}</div>
                 <h3 className="font-display text-2xl font-light text-navy mb-4 group-hover:text-ember transition-colors">
@@ -150,7 +150,7 @@ export default function Home() {
             {/* Visual accent */}
             <div className="hidden md:block">
               <div className="relative">
-                <div className="bg-parchment rounded-sm p-12 border border-parchment-dark">
+                <div className="bg-parchment rounded-xs p-12 border border-parchment-dark">
                   <blockquote className="font-display text-3xl font-light text-navy italic leading-snug">
                     &ldquo;The gap between AI potential and AI execution is a
                     leadership problem, not a technology one.&rdquo;
@@ -162,7 +162,7 @@ export default function Home() {
                     </span>
                   </div>
                 </div>
-                <div className="absolute -bottom-3 -right-3 w-full h-full border border-ember/20 rounded-sm -z-10" />
+                <div className="absolute -bottom-3 -right-3 w-full h-full border border-ember/20 rounded-xs -z-10" />
               </div>
             </div>
           </div>

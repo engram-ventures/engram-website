@@ -85,7 +85,7 @@ export default function ServicesPage() {
               <div
                 key={s.id}
                 id={s.id}
-                className="bg-white border border-parchment-dark rounded-sm overflow-hidden"
+                className="bg-white border border-parchment-dark rounded-xs overflow-hidden"
               >
                 <div className="grid grid-cols-1 md:grid-cols-5">
                   {/* Left panel */}
@@ -119,7 +119,7 @@ export default function ServicesPage() {
                       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {s.deliverables.map((d) => (
                           <li key={d} className="flex items-start gap-3">
-                            <span className="text-ember mt-0.5 text-xs flex-shrink-0">◆</span>
+                            <span className="text-ember mt-0.5 text-xs shrink-0">◆</span>
                             <span className="font-body text-sm font-light text-navy leading-snug">
                               {d}
                             </span>
@@ -146,7 +146,7 @@ export default function ServicesPage() {
               Tell us about your situation and we&apos;ll work it out together.
             </p>
           </div>
-          <Link href="/contact" className="btn-primary flex-shrink-0">
+          <Link href="/contact" className="btn-primary shrink-0">
             Start a conversation →
           </Link>
         </div>

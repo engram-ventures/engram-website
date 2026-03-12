@@ -91,7 +91,7 @@ export default function AboutPage() {
               <ul className="space-y-4">
                 {credentials.map((c) => (
                   <li key={c} className="flex items-start gap-4">
-                    <span className="text-ember mt-1 text-xs flex-shrink-0">◆</span>
+                    <span className="text-ember mt-1 text-xs shrink-0">◆</span>
                     <span className="font-body text-sm font-light text-navy leading-relaxed">
                       {c}
                     </span>
@@ -99,7 +99,7 @@ export default function AboutPage() {
                 ))}
               </ul>
 
-              <div className="mt-12 bg-white border border-parchment-dark rounded-sm p-8">
+              <div className="mt-12 bg-white border border-parchment-dark rounded-xs p-8">
                 <blockquote className="font-display text-2xl font-light text-navy italic leading-snug">
                   &ldquo;AI intelligence, embedded.&rdquo;
                 </blockquote>
