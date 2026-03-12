@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { servicesJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "AI Strategy, Due Diligence & DevSecOps Services",
   description:
     "AI Strategy & Roadmaps, Technical Due Diligence, and DevSecOps & Cloud Architecture. Engram Ventures delivers embedded advisory for enterprise leaders and investors.",
+  alternates: { canonical: "/services" },
 };
 
 const services = [
@@ -64,6 +66,12 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(servicesJsonLd),
+        }}
+      />
       {/* Header */}
       <section className="bg-navy pt-32 pb-24">
         <div className="max-w-6xl mx-auto px-6">
@@ -115,7 +123,7 @@ export default function ServicesPage() {
                       {s.description}
                     </p>
                     <div>
-                      <div className="section-label mb-5">Deliverables</div>
+                      <h3 className="section-label mb-5">Deliverables</h3>
                       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {s.deliverables.map((d) => (
                           <li key={d} className="flex items-start gap-3">

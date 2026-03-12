@@ -172,10 +172,10 @@ export default function ContactPage() {
               <div>
                 <div className="section-label mb-4">Direct contact</div>
                 <a
-                  href="mailto:hello@engramventures.com"
+                  href="mailto:hello@engram.ventures"
                   className="font-body text-base font-light text-navy hover:text-ember transition-colors"
                 >
-                  hello@engramventures.com
+                  hello@engram.ventures
                 </a>
               </div>
 

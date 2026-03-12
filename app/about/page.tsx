@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About — 23+ Years in Enterprise Technology & AI",
   description:
-    "Engram Ventures was founded by a technologist with 23+ years in enterprise systems, cloud infrastructure, and AI product development. Based in Sydney, Australia.",
+    "Founded by Andre Gallo — a technologist with 23+ years in enterprise systems, cloud architecture, and AI product development. Based in Sydney, Australia.",
+  alternates: { canonical: "/about" },
 };
 
 const credentials = [
@@ -66,13 +68,14 @@ export default function AboutPage() {
                   do: leave something lasting behind.
                 </p>
                 <p>
-                  Engram Ventures was founded after two decades inside
-                  enterprise technology — as an architect, as a CTO, and as
-                  someone who has seen the same problems repeat themselves in
-                  different companies and different sectors. The problems are
-                  rarely technical. They&apos;re about leadership clarity,
-                  organisational alignment, and the gap between what technology
-                  can do and what an organisation is actually ready to absorb.
+                  I&apos;m Andre Gallo. I founded Engram Ventures after two
+                  decades inside enterprise technology — as an architect, as a
+                  CTO, and as someone who has seen the same problems repeat
+                  themselves in different companies and different sectors. The
+                  problems are rarely technical. They&apos;re about leadership
+                  clarity, organisational alignment, and the gap between what
+                  technology can do and what an organisation is actually ready
+                  to absorb.
                 </p>
                 <p>
                   AI has made that gap wider and more expensive to ignore. The
@@ -80,14 +83,31 @@ export default function AboutPage() {
                   a strategic question first, and a technology question second.
                 </p>
                 <p>
-                  That&apos;s the work we do.
+                  That&apos;s the work I built Engram Ventures to do.
                 </p>
               </div>
             </div>
 
             {/* Credentials */}
             <div>
-              <div className="section-label mb-6">Credentials</div>
+              <div className="relative mb-8">
+                <div className="overflow-hidden rounded-xs border border-parchment-dark">
+                  <Image
+                    src="/web-profile-new.jpeg"
+                    alt="Andre Gallo — Founder & CEO at Engram Ventures"
+                    width={600}
+                    height={750}
+                    className="w-full object-cover"
+                    priority
+                  />
+                </div>
+                <div className="absolute -bottom-3 -right-3 w-full h-full border border-ember/20 rounded-xs -z-10" />
+              </div>
+
+              <div className="section-label mb-3">Andre Gallo</div>
+              <p className="font-body text-sm font-light text-slate-warm mb-6">
+                Founder &amp; CEO
+              </p>
               <ul className="space-y-4">
                 {credentials.map((c) => (
                   <li key={c} className="flex items-start gap-4">
@@ -98,18 +118,6 @@ export default function AboutPage() {
                   </li>
                 ))}
               </ul>
-
-              <div className="mt-12 bg-white border border-parchment-dark rounded-xs p-8">
-                <blockquote className="font-display text-2xl font-light text-navy italic leading-snug">
-                  &ldquo;AI intelligence, embedded.&rdquo;
-                </blockquote>
-                <div className="mt-6 flex items-center gap-3">
-                  <div className="w-6 h-px bg-ember" />
-                  <span className="font-body text-xs font-light text-slate-warm tracking-wide">
-                    Engram Ventures
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
         </div>

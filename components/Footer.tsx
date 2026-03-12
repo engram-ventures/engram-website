@@ -47,21 +47,21 @@ export default function Footer() {
             <p className="font-body text-sm font-light leading-relaxed mb-4">
               Sydney, Australia
             </p>
-            <Link
-              href="/contact"
+            <a
+              href="mailto:hello@engram.ventures"
               className="font-body text-sm font-light text-parchment hover:text-ember transition-colors"
             >
-              hello@engramventures.com
-            </Link>
+              hello@engram.ventures
+            </a>
           </div>
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <p className="font-body text-xs font-light">
-            © {year} Engram Advisory Pty Ltd. All rights reserved.
+            © {year} Engram Ventures Pty Ltd. All rights reserved.
           </p>
           <p className="font-body text-xs font-light">
-            ABN · Registered in Australia
+            ABN 65 696 046 045
           </p>
         </div>
       </div>

@@ -13,8 +13,8 @@ export async function POST(req: NextRequest) {
     }
 
     const { error } = await resend.emails.send({
-      from: "Engram Ventures <noreply@engramventures.com>",
-      to: ["hello@engramventures.com"],
+      from: "Engram Ventures <noreply@engram.ventures>",
+      to: ["hello@engram.ventures"],
       replyTo: email,
       subject: `New enquiry from ${name}${type ? ` — ${type}` : ""}`,
       text: `

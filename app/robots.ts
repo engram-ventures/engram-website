@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://engramventures.com/sitemap.xml",
+    sitemap: "https://engram.ventures/sitemap.xml",
   };
 }

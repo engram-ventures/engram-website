@@ -1,31 +1,30 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://engramventures.com";
-  const now = new Date();
+  const baseUrl = "https://engram.ventures";
 
   return [
     {
       url: baseUrl,
-      lastModified: now,
+      lastModified: new Date("2026-03-12"),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
       url: `${baseUrl}/services`,
-      lastModified: now,
+      lastModified: new Date("2026-03-12"),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: now,
+      lastModified: new Date("2026-03-12"),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: now,
+      lastModified: new Date("2026-03-12"),
       changeFrequency: "yearly",
       priority: 0.7,
     },

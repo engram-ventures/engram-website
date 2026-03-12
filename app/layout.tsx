@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Jost, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { organizationJsonLd } from "@/lib/structured-data";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -26,7 +27,7 @@ const jetbrains = JetBrains_Mono({
   display: "swap",
 });
 
-const siteUrl = "https://engramventures.com";
+const siteUrl = "https://engram.ventures";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
     "Australia",
     "Sydney",
   ],
-  authors: [{ name: "Engram Ventures" }],
+  authors: [{ name: "Andre Gallo" }],
   creator: "Engram Ventures",
   openGraph: {
     type: "website",
@@ -96,6 +97,12 @@ export default function RootLayout({
       className={`${cormorant.variable} ${jost.variable} ${jetbrains.variable}`}
     >
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
         <Navigation />
         <main>{children}</main>
         <Footer />

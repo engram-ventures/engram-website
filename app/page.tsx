@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Engram Ventures — AI Strategy & Technical Advisory",
   description:
     "Engram Ventures partners with enterprise technology leaders and investors to build lasting AI capability through embedded strategy, rigorous due diligence, and engineering foundations that hold.",
+  alternates: { canonical: "/" },
 };
 
 const services = [
