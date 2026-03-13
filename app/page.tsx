@@ -104,7 +104,7 @@ export default function Home() {
               <Link
                 key={s.name}
                 href={s.href}
-                className="card group hover:border-ember/40 hover:shadow-xs transition-all duration-200"
+                className="card group hover:border-ember/40 hover:shadow-xs transition-[border-color,box-shadow] duration-200 focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 focus-visible:outline-hidden"
               >
                 <div className="text-2xl text-ember mb-6">{s.icon}</div>
                 <h3 className="font-display text-2xl font-light text-navy mb-4 group-hover:text-ember transition-colors">

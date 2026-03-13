@@ -29,7 +29,7 @@ export default function Navigation() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300 ${
         scrolled || !isHome
           ? "bg-parchment/95 backdrop-blur-xs border-b border-parchment-dark"
           : "bg-transparent"
@@ -60,7 +60,7 @@ export default function Navigation() {
             <Link
               key={link.href}
               href={link.href}
-              className={`font-body text-sm font-light tracking-wide transition-colors ${
+              className={`font-body text-sm font-light tracking-wide transition-colors focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 focus-visible:outline-hidden rounded-xs ${
                 pathname === link.href
                   ? "text-ember"
                   : scrolled || !isHome
@@ -78,14 +78,14 @@ export default function Navigation() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className="md:hidden flex flex-col gap-1.5 p-2 focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 focus-visible:outline-hidden rounded-xs"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
           {[0, 1, 2].map((i) => (
             <span
               key={i}
-              className={`block w-5 h-px transition-all duration-200 ${
+              className={`block w-5 h-px transition-[transform,opacity] duration-200 ${
                 scrolled || !isHome ? "bg-navy" : "bg-parchment"
               } ${
                 menuOpen && i === 0

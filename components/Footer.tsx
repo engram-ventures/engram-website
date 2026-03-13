@@ -33,7 +33,7 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="font-body text-sm font-light text-parchment/60 hover:text-parchment transition-colors"
+                  className="font-body text-sm font-light text-parchment/60 hover:text-parchment transition-colors focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 focus-visible:outline-hidden rounded-xs"
                 >
                   {link.label}
                 </Link>
@@ -49,7 +49,7 @@ export default function Footer() {
             </p>
             <a
               href="mailto:hello@engram.ventures"
-              className="font-body text-sm font-light text-parchment hover:text-ember transition-colors"
+              className="font-body text-sm font-light text-parchment hover:text-ember transition-colors focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 focus-visible:outline-hidden rounded-xs"
             >
               hello@engram.ventures
             </a>
@@ -57,7 +57,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <p className="font-body text-xs font-light">
+          <p className="font-body text-xs font-light" suppressHydrationWarning>
             © {year} Engram Ventures Pty Ltd. All rights reserved.
           </p>
           <p className="font-body text-xs font-light">

@@ -29,18 +29,30 @@
   }
 
   h1, h2, h3, h4 {
-    @apply font-display;
+    @apply font-display text-pretty;
+  }
+
+  /* Skip link for keyboard/screen-reader navigation */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-navy focus:text-parchment focus:px-4 focus:py-2 focus:rounded-xs focus:text-sm focus:font-body;
+  }
+
+  /* Scroll margin for anchor targets behind fixed header */
+  [id] {
+    scroll-margin-top: 5rem;
   }
 }
 
 @utility btn-primary {
   @apply inline-flex items-center gap-2 bg-ember text-parchment px-6 py-3 text-sm font-body font-medium tracking-wide
-         hover:bg-ember-dark transition-colors duration-200 rounded-xs cursor-pointer;
+         hover:bg-ember-dark transition-colors duration-200 rounded-xs cursor-pointer
+         focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 focus-visible:outline-hidden;
 }
 
 @utility btn-outline {
   @apply inline-flex items-center gap-2 border border-navy text-navy px-6 py-3 text-sm font-body font-medium tracking-wide
-         hover:bg-navy hover:text-parchment transition-colors duration-200 rounded-xs cursor-pointer;
+         hover:bg-navy hover:text-parchment transition-colors duration-200 rounded-xs cursor-pointer
+         focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2 focus-visible:outline-hidden;
 }
 
 @utility section-label {

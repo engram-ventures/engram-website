@@ -96,6 +96,9 @@ export default function RootLayout({
       lang="en-AU"
       className={`${cormorant.variable} ${jost.variable} ${jetbrains.variable}`}
     >
+      <head>
+        <meta name="theme-color" content="#1C2B3A" />
+      </head>
       <body>
         <script
           type="application/ld+json"
@@ -103,8 +106,11 @@ export default function RootLayout({
             __html: JSON.stringify(organizationJsonLd),
           }}
         />
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <Navigation />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
       </body>
     </html>

@@ -25,7 +25,7 @@ export default function ContactPage() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
 
-  const handleSubmit = async (e: React.MouseEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormState("loading");
     try {
@@ -41,7 +41,7 @@ export default function ContactPage() {
   };
 
   const inputClass =
-    "w-full bg-white border border-parchment-dark rounded-xs px-4 py-3 font-body text-sm font-light text-navy placeholder:text-slate-warm/60 focus:outline-hidden focus:border-ember transition-colors";
+    "w-full bg-white border border-parchment-dark rounded-xs px-4 py-3 font-body text-sm font-light text-navy placeholder:text-slate-warm/60 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 transition-colors";
 
   return (
     <>
@@ -65,26 +65,34 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-16">
             {/* Form */}
             <div className="md:col-span-3">
-              {formState === "success" ? (
-                <div className="bg-white border border-parchment-dark rounded-xs p-12 text-center">
-                  <div className="text-4xl text-sage mb-6">◆</div>
-                  <h2 className="font-display text-3xl font-light text-navy mb-4">
-                    Message received.
-                  </h2>
-                  <p className="font-body text-base font-light text-slate-warm leading-relaxed">
-                    Thanks for reaching out. We&apos;ll be in touch within one
-                    business day.
-                  </p>
-                </div>
-              ) : (
-                <div className="bg-white border border-parchment-dark rounded-xs p-10">
+              <div aria-live="polite">
+                {formState === "success" && (
+                  <div className="bg-white border border-parchment-dark rounded-xs p-12 text-center">
+                    <div className="text-4xl text-sage mb-6">◆</div>
+                    <h2 className="font-display text-3xl font-light text-navy mb-4">
+                      Message received.
+                    </h2>
+                    <p className="font-body text-base font-light text-slate-warm leading-relaxed">
+                      Thanks for reaching out. We&apos;ll be in touch within one
+                      business day.
+                    </p>
+                  </div>
+                )}
+              </div>
+              {formState !== "success" && (
+                <form
+                  onSubmit={handleSubmit}
+                  className="bg-white border border-parchment-dark rounded-xs p-10"
+                >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                     <div>
-                      <label className="section-label block mb-2">Name</label>
+                      <label htmlFor="name" className="section-label block mb-2">Name</label>
                       <input
+                        id="name"
                         name="name"
                         type="text"
-                        placeholder="Your name"
+                        autoComplete="name"
+                        placeholder="Your name…"
                         value={form.name}
                         onChange={handleChange}
                         className={inputClass}
@@ -92,10 +100,13 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label className="section-label block mb-2">Email</label>
+                      <label htmlFor="email" className="section-label block mb-2">Email</label>
                       <input
+                        id="email"
                         name="email"
                         type="email"
+                        autoComplete="email"
+                        spellCheck={false}
                         placeholder="you@company.com"
                         value={form.email}
                         onChange={handleChange}
@@ -106,11 +117,13 @@ export default function ContactPage() {
                   </div>
 
                   <div className="mb-5">
-                    <label className="section-label block mb-2">Company</label>
+                    <label htmlFor="company" className="section-label block mb-2">Company</label>
                     <input
+                      id="company"
                       name="company"
                       type="text"
-                      placeholder="Your organisation"
+                      autoComplete="organization"
+                      placeholder="Your organisation…"
                       value={form.company}
                       onChange={handleChange}
                       className={inputClass}
@@ -118,10 +131,11 @@ export default function ContactPage() {
                   </div>
 
                   <div className="mb-5">
-                    <label className="section-label block mb-2">
+                    <label htmlFor="enquiry-type" className="section-label block mb-2">
                       Enquiry type
                     </label>
                     <select
+                      id="enquiry-type"
                       name="type"
                       value={form.type}
                       onChange={handleChange}
@@ -137,8 +151,9 @@ export default function ContactPage() {
                   </div>
 
                   <div className="mb-8">
-                    <label className="section-label block mb-2">Message</label>
+                    <label htmlFor="message" className="section-label block mb-2">Message</label>
                     <textarea
+                      id="message"
                       name="message"
                       rows={6}
                       placeholder="Tell us about your situation — the more context, the better."
@@ -149,21 +164,23 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  {formState === "error" && (
-                    <p className="text-ember font-body text-sm mb-4">
-                      Something went wrong. Please try again or email us
-                      directly.
-                    </p>
-                  )}
+                  <div aria-live="polite">
+                    {formState === "error" && (
+                      <p className="text-ember font-body text-sm mb-4">
+                        Something went wrong. Please try again or email us
+                        directly.
+                      </p>
+                    )}
+                  </div>
 
                   <button
-                    onClick={handleSubmit}
+                    type="submit"
                     disabled={formState === "loading" || !form.name || !form.email || !form.message}
                     className="btn-primary w-full justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {formState === "loading" ? "Sending..." : "Send message →"}
+                    {formState === "loading" ? "Sending\u2026" : "Send message \u2192"}
                   </button>
-                </div>
+                </form>
               )}
             </div>
 
@@ -173,7 +190,7 @@ export default function ContactPage() {
                 <div className="section-label mb-4">Direct contact</div>
                 <a
                   href="mailto:hello@engram.ventures"
-                  className="font-body text-base font-light text-navy hover:text-ember transition-colors"
+                  className="font-body text-base font-light text-navy hover:text-ember transition-colors focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 focus-visible:outline-hidden rounded-xs"
                 >
                   hello@engram.ventures
                 </a>
