@@ -4,7 +4,7 @@
     "agent-browser": {
       "source": "vercel-labs/agent-browser",
       "sourceType": "github",
-      "computedHash": "234f541bf6e9ac5316efa1a35ef971fd342b32d976578852c016ceb442000a81"
+      "computedHash": "eba411ca85faf9e984574c4aee361eeb84b5073f502685d78c726deb39390ffc"
     },
     "seo-audit": {
       "source": "coreyhaines31/marketingskills",
