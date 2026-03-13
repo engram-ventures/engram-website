@@ -1,7 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+let resend: Resend;
+function getResend() {
+  if (!resend) {
+    resend = new Resend(process.env.RESEND_API_KEY);
+  }
+  return resend;
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -12,7 +18,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    const { error } = await resend.emails.send({
+    const { error } = await getResend().emails.send({
       from: "Engram Ventures <noreply@engram.ventures>",
       to: ["hello@engram.ventures"],
       replyTo: email,
