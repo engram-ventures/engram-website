@@ -10,6 +10,8 @@ const links = [
   { href: "/contact", label: "Contact" },
 ];
 
+const hamburgerLines = [0, 1, 2] as const;
+
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -84,7 +86,7 @@ export default function Navigation() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          {[0, 1, 2].map((i) => (
+          {hamburgerLines.map((i) => (
             <span
               key={i}
               className={`block w-5 h-px transition-[transform,opacity] duration-200 ${

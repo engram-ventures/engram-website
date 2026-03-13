@@ -11,6 +11,9 @@ const enquiryTypes = [
   "General enquiry",
 ];
 
+const inputClass =
+  "w-full bg-white border border-parchment-dark rounded-xs px-4 py-3 font-body text-sm font-light text-navy placeholder:text-slate-warm/60 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 transition-colors";
+
 export default function ContactPage() {
   const [formState, setFormState] = useState<FormState>("idle");
   const [form, setForm] = useState({
@@ -39,9 +42,6 @@ export default function ContactPage() {
       setFormState("error");
     }
   };
-
-  const inputClass =
-    "w-full bg-white border border-parchment-dark rounded-xs px-4 py-3 font-body text-sm font-light text-navy placeholder:text-slate-warm/60 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 transition-colors";
 
   return (
     <>
