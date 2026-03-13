@@ -2,35 +2,35 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Engram Ventures — AI Strategy & Technical Advisory",
+  title: "Engram Ventures — AI Engineering & Technical Advisory",
   description:
-    "Engram Ventures partners with enterprise technology leaders and investors to build lasting AI capability through embedded strategy, rigorous due diligence, and engineering foundations that hold.",
+    "Engram Ventures partners with technology leaders and investors to build AI capability that works — through hands-on engineering, technical due diligence, and architecture that holds.",
   alternates: { canonical: "/" },
 };
 
 const services = [
   {
     icon: "◈",
-    name: "AI Strategy & Roadmaps",
-    desc: "Translating AI potential into executable plans. From board-level framing to team-level implementation.",
+    name: "AI Architecture & Planning",
+    desc: "Turning AI ambitions into systems that ship. Architecture decisions, build-or-buy analysis, and implementation plans your team can actually follow.",
     href: "/services#ai-strategy",
   },
   {
     icon: "◎",
     name: "Technical Due Diligence",
-    desc: "For PE/VC firms evaluating technology assets. Architecture reviews, team assessments, risk scoring.",
+    desc: "For investors who need to know what's really under the hood. Architecture reviews, codebase health, team assessments, and honest risk scoring.",
     href: "/services#due-diligence",
   },
   {
     icon: "◇",
     name: "DevSecOps & Cloud",
-    desc: "Security-first engineering foundations. AWS architecture, compliance frameworks, and agentic SDLC design.",
+    desc: "Security-first engineering foundations. Cloud architecture, CI/CD hardening, compliance automation, and AI-native development workflows.",
     href: "/services#devsecops",
   },
 ];
 
 const stats = [
-  { value: "23+", label: "Years in tech leadership" },
+  { value: "23+", label: "Years in engineering & leadership" },
   { value: "3", label: "Core service lines" },
   { value: "AU", label: "Sydney-based, globally connected" },
 ];
@@ -49,7 +49,7 @@ export default function Home() {
         <div className="relative max-w-6xl mx-auto px-6 py-32">
           <div className="max-w-3xl">
             <div className="section-label text-ember mb-8">
-              AI Strategy · Due Diligence · DevSecOps
+              AI Engineering · Due Diligence · DevSecOps
             </div>
             <h1 className="font-display text-6xl md:text-7xl lg:text-8xl font-light text-parchment leading-[0.95] mb-8">
               Strategy
@@ -57,10 +57,10 @@ export default function Home() {
               <em className="text-ember font-light">that sticks.</em>
             </h1>
             <p className="font-body text-lg md:text-xl font-light text-parchment/70 leading-relaxed mb-12 max-w-xl">
-              Engram Ventures partners with enterprise technology leaders and
-              investors to build lasting AI capability — through embedded
-              strategy, rigorous due diligence, and engineering foundations that
-              hold.
+              Engram Ventures partners with technology leaders and investors to
+              build AI capability that actually works — through hands-on
+              engineering, rigorous technical due diligence, and architecture
+              that holds up under real-world load.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact" className="btn-primary">
@@ -153,8 +153,9 @@ export default function Home() {
               <div className="relative">
                 <div className="bg-parchment rounded-xs p-12 border border-parchment-dark">
                   <blockquote className="font-display text-3xl font-light text-navy italic leading-snug">
-                    &ldquo;The gap between AI potential and AI execution is a
-                    leadership problem, not a technology one.&rdquo;
+                    &ldquo;The gap between what AI can do and what most teams
+                    actually ship isn&apos;t a technology problem — it&apos;s a
+                    mindset and culture one.&rdquo;
                   </blockquote>
                   <div className="mt-8 flex items-center gap-3">
                     <div className="w-8 h-px bg-ember" />
@@ -178,9 +179,9 @@ export default function Home() {
             Let&apos;s work together
           </h2>
           <p className="font-body text-base font-light text-parchment/60 max-w-lg mx-auto mb-12 leading-relaxed">
-            Whether you&apos;re evaluating an acquisition, building your AI
-            roadmap, or hardening your engineering foundations — we&apos;d like
-            to hear about it.
+            Whether you&apos;re evaluating a tech asset, planning an AI build,
+            or hardening your infrastructure — we&apos;d like to hear about
+            it.
           </p>
           <Link href="/contact" className="btn-primary">
             Get in touch

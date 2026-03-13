@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 
 const credentials = [
   "23+ years across enterprise technology, cloud architecture, and product leadership",
-  "Founding CTO experience at AI-native fintech (Go Consumer / Trustly)",
-  "AWS Architect with deep expertise across EKS, RDS, Cognito, Security Hub, and IAM",
-  "ISO 27001, SOC 2, and OWASP Mobile Top 10 compliance practitioner",
-  "Multi-agent AI architecture design and agentic SDLC implementation",
-  "Experience spanning Sydney, San Francisco, and distributed international teams",
+  "Founding CTO at AI-native fintechs and healthtechs — zero to production",
+  "AWS Architect and AI/ML Certified Practitioner",
+  "ISO 27001 and SOC 2 compliance — designed and implemented, not just audited",
+  "Multi-agent AI architecture and AI-assisted development workflows",
+  "Built teams and shipped products across Sydney, São Paulo, San Francisco",
 ];
 
 const values = [
@@ -25,7 +25,7 @@ const values = [
   },
   {
     name: "Honest over comfortable",
-    desc: "If the architecture is weak, we'll say so. If the AI strategy won't work, we'll tell you before you invest. Clients hire us for our judgement — we protect that.",
+    desc: "If the architecture is weak, we'll say so. If the plan won't work, we'll tell you before you spend. You're paying for honest judgement — we protect that.",
   },
   {
     name: "Precise and plain",
@@ -33,7 +33,7 @@ const values = [
   },
   {
     name: "Outcomes over outputs",
-    desc: "Reports, roadmaps, and frameworks are only valuable if they change something. We stay accountable to results, not just deliverables.",
+    desc: "Reports and roadmaps are only useful if something changes because of them. We stay accountable to results, not just deliverables.",
   },
 ];
 
@@ -63,9 +63,9 @@ export default function AboutPage() {
               <div className="space-y-5 font-body text-base font-light text-slate-warm leading-relaxed">
                 <p>
                   The name Engram comes from neuroscience — a memory trace, the
-                  physical mark that experience leaves in the brain. It&apos;s a
-                  useful metaphor for what we think good advisory work should
-                  do: leave something lasting behind.
+                  physical mark that experience leaves in the brain. It&apos;s
+                  how we think about good work: it should leave something
+                  lasting behind. Not a slide deck, but real capability.
                 </p>
                 <p>
                   I&apos;m Andre Gallo. I founded Engram Ventures after two
@@ -78,12 +78,13 @@ export default function AboutPage() {
                   to absorb.
                 </p>
                 <p>
-                  AI has made that gap wider and more expensive to ignore. The
-                  organisations that close it well are the ones that treat AI as
-                  a strategic question first, and a technology question second.
+                  AI has made that gap wider and much more expensive to get wrong.
+                  The teams that close it well are the ones that pair real
+                  engineering depth with clear thinking about what to build and
+                  why.
                 </p>
                 <p>
-                  That&apos;s the work I built Engram Ventures to do.
+                  That&apos;s the work I started Engram Ventures to do.
                 </p>
               </div>
             </div>

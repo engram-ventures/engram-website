@@ -5,7 +5,7 @@ import { useState } from "react";
 type FormState = "idle" | "loading" | "success" | "error";
 
 const enquiryTypes = [
-  "AI Strategy & Roadmap",
+  "AI Architecture & Planning",
   "Technical Due Diligence",
   "DevSecOps & Cloud Architecture",
   "General enquiry",

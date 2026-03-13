@@ -32,13 +32,13 @@ const siteUrl = "https://engram.ventures";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Engram Ventures — AI Strategy & Technical Advisory",
+    default: "Engram Ventures — AI Engineering & Technical Advisory",
     template: "%s | Engram Ventures",
   },
   description:
-    "Engram Ventures partners with enterprise technology leaders and investors to build lasting AI capability — through embedded strategy, rigorous due diligence, and engineering foundations that hold.",
+    "Engram Ventures partners with technology leaders and investors to build AI capability that works — through hands-on engineering, technical due diligence, and architecture that holds.",
   keywords: [
-    "AI strategy",
+    "AI engineering",
     "technical advisory",
     "tech due diligence",
     "DevSecOps",
@@ -54,9 +54,9 @@ export const metadata: Metadata = {
     locale: "en_AU",
     url: siteUrl,
     siteName: "Engram Ventures",
-    title: "Engram Ventures — AI Strategy & Technical Advisory",
+    title: "Engram Ventures — AI Engineering & Technical Advisory",
     description:
-      "Partnering with enterprise leaders and investors to build lasting AI capability.",
+      "Partnering with technology leaders and investors to build AI capability that works.",
     images: [
       {
         url: "/og-image.png",
@@ -68,9 +68,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Engram Ventures — AI Strategy & Technical Advisory",
+    title: "Engram Ventures — AI Engineering & Technical Advisory",
     description:
-      "Partnering with enterprise leaders and investors to build lasting AI capability.",
+      "Partnering with technology leaders and investors to build AI capability that works.",
     images: ["/og-image.png"],
   },
   robots: {

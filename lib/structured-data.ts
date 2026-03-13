@@ -7,7 +7,7 @@ export const organizationJsonLd = {
   url: siteUrl,
   logo: `${siteUrl}/og-image.png`,
   description:
-    "Engram Ventures partners with enterprise technology leaders and investors to build lasting AI capability through embedded strategy, rigorous due diligence, and engineering foundations that hold.",
+    "Engram Ventures partners with technology leaders and investors to build AI capability that works — through hands-on engineering, technical due diligence, and architecture that holds.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Sydney",
@@ -31,7 +31,7 @@ export const organizationJsonLd = {
     },
   },
   knowsAbout: [
-    "AI Strategy",
+    "AI Architecture",
     "Technical Due Diligence",
     "DevSecOps",
     "Cloud Architecture",
@@ -43,9 +43,9 @@ export const servicesJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "AI Strategy & Roadmaps",
+    name: "AI Architecture & Planning",
     description:
-      "Translating AI potential into executable plans. From board-level framing to team-level implementation.",
+      "Turning AI ambitions into systems that ship. Architecture decisions, build-or-buy analysis, and implementation plans your team can actually follow.",
     provider: {
       "@type": "ProfessionalService",
       name: "Engram Ventures",
@@ -58,7 +58,7 @@ export const servicesJsonLd = [
     "@type": "Service",
     name: "Technical Due Diligence",
     description:
-      "For PE/VC firms evaluating technology assets. Architecture reviews, team assessments, risk scoring.",
+      "For investors who need to know what's really under the hood. Architecture reviews, codebase health, team assessments, and honest risk scoring.",
     provider: {
       "@type": "ProfessionalService",
       name: "Engram Ventures",
@@ -71,7 +71,7 @@ export const servicesJsonLd = [
     "@type": "Service",
     name: "DevSecOps & Cloud Architecture",
     description:
-      "Security-first engineering foundations. AWS architecture, compliance frameworks, and agentic SDLC design.",
+      "Security-first engineering foundations. Cloud architecture, CI/CD hardening, compliance automation, and AI-native development workflows.",
     provider: {
       "@type": "ProfessionalService",
       name: "Engram Ventures",
