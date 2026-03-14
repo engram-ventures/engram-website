@@ -29,12 +29,6 @@ const services = [
   },
 ];
 
-const stats = [
-  { value: "23+", label: "Years in engineering & leadership" },
-  { value: "3", label: "Core service lines" },
-  { value: "AU", label: "Sydney-based, globally connected" },
-];
-
 export default function Home() {
   return (
     <>
@@ -71,20 +65,6 @@ export default function Home() {
                 Our services
               </Link>
             </div>
-          </div>
-
-          {/* Stats */}
-          <div className="mt-24 grid grid-cols-3 gap-8 max-w-xl border-t border-white/10 pt-12">
-            {stats.map((s) => (
-              <div key={s.value}>
-                <div className="font-display text-3xl font-light text-parchment mb-1">
-                  {s.value}
-                </div>
-                <div className="font-body text-xs font-light text-parchment/50 leading-snug">
-                  {s.label}
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

@@ -89,9 +89,7 @@ export default function ServicesPage() {
       <section className="py-20 bg-parchment">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col gap-6">
-            {services.map((s, i) => {
-              const isEven = i % 2 === 0;
-              return (
+            {services.map((s, i) => (
               <div
                 key={s.id}
                 id={s.id}
@@ -99,21 +97,21 @@ export default function ServicesPage() {
               >
                 <div className="grid grid-cols-1 md:grid-cols-5">
                   {/* Left panel */}
-                  <div className={`md:col-span-2 p-10 ${isEven ? "bg-navy" : "bg-parchment border-b md:border-b-0 md:border-r border-parchment-dark"}`}>
+                  <div className={`md:col-span-2 p-10 ${i % 2 === 0 ? "bg-navy" : "bg-navy-light"}`}>
                     <div className="text-3xl mb-6 text-ember">
                       {s.icon}
                     </div>
-                    <h2 className={`font-display text-3xl font-light mb-3 ${isEven ? "text-parchment" : "text-navy"}`}>
+                    <h2 className="font-display text-3xl font-light mb-3 text-parchment">
                       {s.name}
                     </h2>
-                    <p className={`font-body text-sm font-light italic mb-8 ${isEven ? "text-parchment/60" : "text-slate-warm"}`}>
+                    <p className="font-body text-sm font-light italic mb-8 text-parchment/60">
                       {s.tagline}
                     </p>
                     <div>
-                      <div className={`section-label mb-3 ${isEven ? "text-ember/70" : "text-ember"}`}>
+                      <div className="section-label mb-3 text-ember/70">
                         Best for
                       </div>
-                      <p className={`font-body text-sm font-light leading-relaxed ${isEven ? "text-parchment/60" : "text-slate-warm"}`}>
+                      <p className="font-body text-sm font-light leading-relaxed text-parchment/60">
                         {s.audience}
                       </p>
                     </div>
@@ -140,8 +138,7 @@ export default function ServicesPage() {
                   </div>
                 </div>
               </div>
-            );
-            })}
+            ))}
           </div>
         </div>
       </section>
