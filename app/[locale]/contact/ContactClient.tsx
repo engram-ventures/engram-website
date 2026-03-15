@@ -1,20 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 type FormState = "idle" | "loading" | "success" | "error";
-
-const enquiryTypes = [
-  "AI Architecture & Planning",
-  "Technical Due Diligence",
-  "DevSecOps & Cloud Architecture",
-  "General enquiry",
-];
 
 const inputClass =
   "w-full bg-white border border-parchment-dark rounded-xs px-4 py-3 font-body text-sm font-light text-navy placeholder:text-slate-warm/60 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 transition-colors";
 
-export default function ContactPage() {
+export default function ContactClient() {
+  const t = useTranslations("Contact");
   const [formState, setFormState] = useState<FormState>("idle");
   const [form, setForm] = useState({
     name: "",
@@ -23,6 +18,13 @@ export default function ContactPage() {
     type: "",
     message: "",
   });
+
+  const enquiryTypes = [
+    t("enquiryType1"),
+    t("enquiryType2"),
+    t("enquiryType3"),
+    t("enquiryType4"),
+  ];
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -48,13 +50,12 @@ export default function ContactPage() {
       {/* Header */}
       <section className="bg-navy pt-32 pb-24">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="section-label text-ember mb-6">Get in touch</div>
+          <div className="section-label text-ember mb-6">{t("label")}</div>
           <h1 className="font-display text-6xl md:text-7xl font-light text-parchment leading-tight max-w-xl">
-            Let&apos;s talk
+            {t("heading")}
           </h1>
           <p className="mt-6 font-body text-lg font-light text-parchment/60 max-w-lg leading-relaxed">
-            Tell us about your situation. We&apos;ll get back to you within one
-            business day.
+            {t("subheading")}
           </p>
         </div>
       </section>
@@ -70,11 +71,10 @@ export default function ContactPage() {
                   <div className="bg-white border border-parchment-dark rounded-xs p-12 text-center">
                     <div className="text-4xl text-sage mb-6">◆</div>
                     <h2 className="font-display text-3xl font-light text-navy mb-4">
-                      Message received.
+                      {t("successHeading")}
                     </h2>
                     <p className="font-body text-base font-light text-slate-warm leading-relaxed">
-                      Thanks for reaching out. We&apos;ll be in touch within one
-                      business day.
+                      {t("successMessage")}
                     </p>
                   </div>
                 )}
@@ -86,13 +86,13 @@ export default function ContactPage() {
                 >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                     <div>
-                      <label htmlFor="name" className="section-label block mb-2">Name</label>
+                      <label htmlFor="name" className="section-label block mb-2">{t("nameLabel")}</label>
                       <input
                         id="name"
                         name="name"
                         type="text"
                         autoComplete="name"
-                        placeholder="Your name…"
+                        placeholder={t("namePlaceholder")}
                         value={form.name}
                         onChange={handleChange}
                         className={inputClass}
@@ -100,14 +100,14 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="section-label block mb-2">Email</label>
+                      <label htmlFor="email" className="section-label block mb-2">{t("emailLabel")}</label>
                       <input
                         id="email"
                         name="email"
                         type="email"
                         autoComplete="email"
                         spellCheck={false}
-                        placeholder="you@company.com"
+                        placeholder={t("emailPlaceholder")}
                         value={form.email}
                         onChange={handleChange}
                         className={inputClass}
@@ -117,13 +117,13 @@ export default function ContactPage() {
                   </div>
 
                   <div className="mb-5">
-                    <label htmlFor="company" className="section-label block mb-2">Company</label>
+                    <label htmlFor="company" className="section-label block mb-2">{t("companyLabel")}</label>
                     <input
                       id="company"
                       name="company"
                       type="text"
                       autoComplete="organization"
-                      placeholder="Your organisation…"
+                      placeholder={t("companyPlaceholder")}
                       value={form.company}
                       onChange={handleChange}
                       className={inputClass}
@@ -132,7 +132,7 @@ export default function ContactPage() {
 
                   <div className="mb-5">
                     <label htmlFor="enquiry-type" className="section-label block mb-2">
-                      Enquiry type
+                      {t("enquiryTypeLabel")}
                     </label>
                     <select
                       id="enquiry-type"
@@ -141,22 +141,22 @@ export default function ContactPage() {
                       onChange={handleChange}
                       className={inputClass}
                     >
-                      <option value="">Select a service area</option>
-                      {enquiryTypes.map((t) => (
-                        <option key={t} value={t}>
-                          {t}
+                      <option value="">{t("enquiryTypePlaceholder")}</option>
+                      {enquiryTypes.map((typ) => (
+                        <option key={typ} value={typ}>
+                          {typ}
                         </option>
                       ))}
                     </select>
                   </div>
 
                   <div className="mb-8">
-                    <label htmlFor="message" className="section-label block mb-2">Message</label>
+                    <label htmlFor="message" className="section-label block mb-2">{t("messageLabel")}</label>
                     <textarea
                       id="message"
                       name="message"
                       rows={6}
-                      placeholder="Tell us about your situation — the more context, the better."
+                      placeholder={t("messagePlaceholder")}
                       value={form.message}
                       onChange={handleChange}
                       className={`${inputClass} resize-none`}
@@ -167,8 +167,7 @@ export default function ContactPage() {
                   <div aria-live="polite">
                     {formState === "error" && (
                       <p className="text-ember font-body text-sm mb-4">
-                        Something went wrong. Please try again or email us
-                        directly.
+                        {t("errorMessage")}
                       </p>
                     )}
                   </div>
@@ -178,7 +177,7 @@ export default function ContactPage() {
                     disabled={formState === "loading" || !form.name || !form.email || !form.message}
                     className="btn-primary w-full justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {formState === "loading" ? "Sending\u2026" : "Send message \u2192"}
+                    {formState === "loading" ? t("submitting") : t("submitButton")}
                   </button>
                 </form>
               )}
@@ -187,7 +186,7 @@ export default function ContactPage() {
             {/* Sidebar */}
             <div className="md:col-span-2 space-y-8">
               <div>
-                <div className="section-label mb-4">Direct contact</div>
+                <div className="section-label mb-4">{t("directContact")}</div>
                 <a
                   href="mailto:hello@engram.ventures"
                   className="font-body text-base font-light text-navy hover:text-ember transition-colors focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 focus-visible:outline-hidden rounded-xs"
@@ -197,27 +196,27 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <div className="section-label mb-4">Based in</div>
+                <div className="section-label mb-4">{t("basedIn")}</div>
                 <p className="font-body text-base font-light text-slate-warm">
-                  Sydney, Australia
+                  {t("basedInValue")}
                   <br />
-                  Available globally
+                  {t("availableGlobally")}
                 </p>
               </div>
 
               <div>
-                <div className="section-label mb-4">Response time</div>
+                <div className="section-label mb-4">{t("responseTime")}</div>
                 <p className="font-body text-base font-light text-slate-warm">
-                  Within one business day (AEST)
+                  {t("responseTimeValue")}
                 </p>
               </div>
 
               <div className="bg-navy rounded-xs p-8">
                 <div className="font-display text-2xl font-light text-parchment italic leading-snug mb-6">
-                  &ldquo;Strategy that sticks.&rdquo;
+                  {t("brandQuote")}
                 </div>
                 <div className="font-body text-xs font-light text-parchment/50 tracking-wide">
-                  ENGRAM VENTURES
+                  {t("brandName")}
                 </div>
               </div>
             </div>

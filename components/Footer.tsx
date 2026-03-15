@@ -1,7 +1,16 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 
-export default function Footer() {
+export default async function Footer() {
+  const t = await getTranslations("Footer");
   const year = new Date().getFullYear();
+
+  const navLinks = [
+    { href: "/" as const, label: t("home") },
+    { href: "/services" as const, label: t("services") },
+    { href: "/about" as const, label: t("about") },
+    { href: "/contact" as const, label: t("contact") },
+  ];
 
   return (
     <footer className="bg-navy text-parchment/60">
@@ -16,20 +25,15 @@ export default function Footer() {
               VENTURES
             </div>
             <p className="font-body text-sm font-light leading-relaxed">
-              Strategy that sticks.
+              {t("tagline")}
             </p>
           </div>
 
           {/* Navigation */}
           <div>
-            <div className="section-label text-ember/70 mb-5">Navigation</div>
+            <div className="section-label text-ember/70 mb-5">{t("navigation")}</div>
             <nav className="flex flex-col gap-3">
-              {[
-                { href: "/", label: "Home" },
-                { href: "/services", label: "Services" },
-                { href: "/about", label: "About" },
-                { href: "/contact", label: "Contact" },
-              ].map((link) => (
+              {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
@@ -43,9 +47,9 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <div className="section-label text-ember/70 mb-5">Get in touch</div>
+            <div className="section-label text-ember/70 mb-5">{t("getInTouch")}</div>
             <p className="font-body text-sm font-light leading-relaxed mb-4">
-              Sydney, Australia
+              {t("location")}
             </p>
             <a
               href="mailto:hello@engram.ventures"
@@ -58,10 +62,10 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <p className="font-body text-xs font-light" suppressHydrationWarning>
-            © {year} Engram Ventures Pty Ltd. All rights reserved.
+            {t("copyright", { year })}
           </p>
           <p className="font-body text-xs font-light">
-            ABN 65 696 046 045
+            {t("abn")}
           </p>
         </div>
       </div>

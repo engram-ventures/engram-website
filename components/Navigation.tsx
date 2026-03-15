@@ -1,21 +1,23 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-
-const links = [
-  { href: "/services", label: "Services" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-];
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const hamburgerLines = [0, 1, 2] as const;
 
 export default function Navigation() {
+  const t = useTranslations("Navigation");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+
+  const links = [
+    { href: "/services" as const, label: t("services") },
+    { href: "/about" as const, label: t("about") },
+    { href: "/contact" as const, label: t("contact") },
+  ];
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
@@ -47,14 +49,14 @@ export default function Navigation() {
               scrolled || !isHome ? "text-navy" : "text-parchment"
             }`}
           >
-            ENGRAM
+            {t("engram")}
           </span>
           <span
             className={`font-body text-[9px] font-light tracking-[0.32em] transition-colors ${
               scrolled || !isHome ? "text-ember" : "text-ember"
             }`}
           >
-            VENTURES
+            {t("ventures")}
           </span>
         </Link>
 
@@ -75,8 +77,11 @@ export default function Navigation() {
               {link.label}
             </Link>
           ))}
+          <div className={scrolled || !isHome ? "text-navy" : "text-parchment"}>
+            <LanguageSwitcher />
+          </div>
           <Link href="/contact" className="btn-primary text-xs py-2 px-4">
-            Get in touch
+            {t("getInTouch")}
           </Link>
         </div>
 
@@ -84,7 +89,7 @@ export default function Navigation() {
         <button
           className="md:hidden flex flex-col gap-1.5 p-2 focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 focus-visible:outline-hidden rounded-xs"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
+          aria-label={t("toggleMenu")}
         >
           {hamburgerLines.map((i) => (
             <span
@@ -120,8 +125,11 @@ export default function Navigation() {
             </Link>
           ))}
           <Link href="/contact" className="btn-primary self-start mt-2">
-            Get in touch
+            {t("getInTouch")}
           </Link>
+          <div className="text-navy">
+            <LanguageSwitcher />
+          </div>
         </div>
       )}
     </header>

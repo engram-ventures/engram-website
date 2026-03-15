@@ -1,40 +1,60 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { setRequestLocale, getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 
-export const metadata: Metadata = {
-  title: "Engram Ventures — AI Engineering & Technical Advisory",
-  description:
-    "Engram Ventures partners with technology leaders and investors to build AI capability that works — through hands-on engineering, technical due diligence, and architecture that holds.",
-  alternates: { canonical: "/" },
+const siteUrl = "https://engram.ventures";
+
+type Props = {
+  params: Promise<{ locale: string }>;
 };
 
-const services = [
-  {
-    icon: "◈",
-    name: "AI Architecture & Planning",
-    desc: "Turning AI ambitions into systems that ship. Architecture decisions, build-or-buy analysis, and implementation plans your team can actually follow.",
-    href: "/services#ai-strategy",
-  },
-  {
-    icon: "◎",
-    name: "Technical Due Diligence",
-    desc: "For investors who need to know what's really under the hood. Architecture reviews, codebase health, team assessments, and honest risk scoring.",
-    href: "/services#due-diligence",
-  },
-  {
-    icon: "◇",
-    name: "DevSecOps & Cloud",
-    desc: "Security-first engineering foundations. Cloud architecture, CI/CD hardening, compliance automation, and AI-native development workflows.",
-    href: "/services#devsecops",
-  },
-];
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Metadata" });
 
-export default function Home() {
+  return {
+    title: t("homeTitle"),
+    description: t("homeDescription"),
+    alternates: {
+      canonical: "/",
+      languages: {
+        en: siteUrl,
+        "pt-BR": `${siteUrl}/pt-BR`,
+      },
+    },
+  };
+}
+
+export default async function Home({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "Home" });
+
+  const services = [
+    {
+      icon: "◈",
+      name: t("service1Name"),
+      desc: t("service1Desc"),
+      href: "/services#ai-strategy" as const,
+    },
+    {
+      icon: "◎",
+      name: t("service2Name"),
+      desc: t("service2Desc"),
+      href: "/services#due-diligence" as const,
+    },
+    {
+      icon: "◇",
+      name: t("service3Name"),
+      desc: t("service3Desc"),
+      href: "/services#devsecops" as const,
+    },
+  ];
+
   return (
     <>
       {/* Hero */}
       <section className="relative bg-navy min-h-screen flex items-center overflow-hidden">
-        {/* Subtle background texture */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-ember blur-3xl" />
           <div className="absolute bottom-1/4 left-1/4 w-64 h-64 rounded-full bg-sage blur-3xl" />
@@ -43,26 +63,23 @@ export default function Home() {
         <div className="relative max-w-6xl mx-auto px-6 py-32">
           <div className="max-w-3xl">
             <div className="section-label text-ember mb-8">
-              AI Engineering · Due Diligence · DevSecOps
+              {t("heroLabel")}
             </div>
             <h1 className="font-display text-6xl md:text-7xl lg:text-8xl font-light text-parchment leading-[0.95] mb-8">
-              Strategy
+              {t("heroTitle1")}
               <br />
-              <em className="text-ember font-light">that sticks.</em>
+              <em className="text-ember font-light">{t("heroTitle2")}</em>
             </h1>
             <p className="font-body text-lg md:text-xl font-light text-parchment/70 leading-relaxed mb-12 max-w-xl">
-              Engram Ventures partners with technology leaders and investors to
-              build AI capability that actually works — through hands-on
-              engineering, rigorous technical due diligence, and architecture
-              that holds up under real-world load.
+              {t("heroDescription")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact" className="btn-primary">
-                Start a conversation
+                {t("startConversation")}
                 <span className="text-xs opacity-60">→</span>
               </Link>
               <Link href="/services" className="btn-outline border-parchment/30 text-parchment hover:bg-parchment hover:text-navy">
-                Our services
+                {t("ourServices")}
               </Link>
             </div>
           </div>
@@ -73,9 +90,9 @@ export default function Home() {
       <section className="py-28 bg-parchment">
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-16">
-            <div className="section-label mb-4">What we do</div>
+            <div className="section-label mb-4">{t("whatWeDo")}</div>
             <h2 className="section-heading max-w-lg">
-              Three ways we work with you
+              {t("threeWays")}
             </h2>
           </div>
 
@@ -94,7 +111,7 @@ export default function Home() {
                   {s.desc}
                 </p>
                 <div className="mt-8 font-body text-xs text-ember opacity-0 group-hover:opacity-100 transition-opacity tracking-wide">
-                  Learn more →
+                  {t("learnMore")}
                 </div>
               </Link>
             ))}
@@ -107,40 +124,31 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="section-label mb-4">About</div>
+              <div className="section-label mb-4">{t("aboutLabel")}</div>
               <h2 className="section-heading mb-6">
-                The thinking behind the build
+                {t("aboutHeading")}
               </h2>
               <p className="font-body text-base font-light text-slate-warm leading-relaxed mb-6">
-                Engram Ventures was founded by a technologist who has spent 23
-                years inside enterprise systems, scaleup product teams, and
-                cloud infrastructure — and who believes the gap between AI
-                potential and AI execution is a leadership problem, not a
-                technology one.
+                {t("aboutP1")}
               </p>
               <p className="font-body text-base font-light text-slate-warm leading-relaxed mb-8">
-                We work best when we&apos;re in the room — embedded with your
-                team, accountable to your outcomes, and honest about what
-                matters.
+                {t("aboutP2")}
               </p>
               <Link href="/about" className="btn-outline">
-                Our story
+                {t("ourStory")}
               </Link>
             </div>
 
-            {/* Visual accent */}
             <div className="hidden md:block">
               <div className="relative">
                 <div className="bg-parchment rounded-xs p-12 border border-parchment-dark">
                   <blockquote className="font-display text-3xl font-light text-navy italic leading-snug">
-                    &ldquo;The gap between what AI can do and what most teams
-                    actually ship isn&apos;t a technology problem — it&apos;s a
-                    mindset and culture one.&rdquo;
+                    {t("aboutQuote")}
                   </blockquote>
                   <div className="mt-8 flex items-center gap-3">
                     <div className="w-8 h-px bg-ember" />
                     <span className="font-body text-xs font-light text-slate-warm tracking-wide">
-                      Engram Ventures
+                      {t("aboutQuoteAttr")}
                     </span>
                   </div>
                 </div>
@@ -154,17 +162,15 @@ export default function Home() {
       {/* CTA */}
       <section className="py-24 bg-navy">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <div className="section-label text-ember mb-6">Ready to start?</div>
+          <div className="section-label text-ember mb-6">{t("ctaLabel")}</div>
           <h2 className="font-display text-5xl md:text-6xl font-light text-parchment mb-8">
-            Let&apos;s work together
+            {t("ctaHeading")}
           </h2>
           <p className="font-body text-base font-light text-parchment/60 max-w-lg mx-auto mb-12 leading-relaxed">
-            Whether you&apos;re evaluating a tech asset, planning an AI build,
-            or hardening your infrastructure — we&apos;d like to hear about
-            it.
+            {t("ctaDescription")}
           </p>
           <Link href="/contact" className="btn-primary">
-            Get in touch
+            {t("ctaButton")}
             <span className="text-xs opacity-60">→</span>
           </Link>
         </div>
