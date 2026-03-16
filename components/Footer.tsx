@@ -48,8 +48,11 @@ export default async function Footer() {
           {/* Contact */}
           <div>
             <div className="section-label text-ember/70 mb-5">{t("getInTouch")}</div>
-            <p className="font-body text-sm font-light leading-relaxed mb-4">
+            <p className="font-body text-sm font-light leading-relaxed">
               {t("location")}
+            </p>
+            <p className="font-body text-sm font-light leading-relaxed mb-4">
+              {t("location2")}
             </p>
             <a
               href="mailto:hello@engram.ventures"

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 type FormState = "idle" | "loading" | "success" | "error";
@@ -197,19 +198,38 @@ export default function ContactClient() {
 
               <div>
                 <div className="section-label mb-4">{t("basedIn")}</div>
-                <p className="font-body text-base font-light text-slate-warm">
-                  {t("basedInValue")}
-                  <br />
-                  {t("availableGlobally")}
-                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="overflow-hidden rounded-xs border border-parchment-dark">
+                    <div className="aspect-[4/3] relative">
+                      <Image
+                        src="/sydney.png"
+                        alt={t("basedInValue")}
+                        fill
+                        className="object-cover grayscale"
+                        sizes="(max-width: 768px) 50vw, 150px"
+                      />
+                    </div>
+                    <div className="px-3 py-2.5 bg-white">
+                      <p className="font-body text-xs font-light text-navy">{t("basedInValue")}</p>
+                    </div>
+                  </div>
+                  <div className="overflow-hidden rounded-xs border border-parchment-dark">
+                    <div className="aspect-[4/3] relative">
+                      <Image
+                        src="/saopaulo.png"
+                        alt={t("basedInValue2")}
+                        fill
+                        className="object-cover grayscale"
+                        sizes="(max-width: 768px) 50vw, 150px"
+                      />
+                    </div>
+                    <div className="px-3 py-2.5 bg-white">
+                      <p className="font-body text-xs font-light text-navy">{t("basedInValue2")}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div>
-                <div className="section-label mb-4">{t("responseTime")}</div>
-                <p className="font-body text-base font-light text-slate-warm">
-                  {t("responseTimeValue")}
-                </p>
-              </div>
 
               <div className="bg-navy rounded-xs p-8">
                 <div className="font-display text-2xl font-light text-parchment italic leading-snug mb-6">

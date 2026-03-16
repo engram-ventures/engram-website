@@ -17,6 +17,7 @@
     "contact": "Contact",
     "getInTouch": "Get in touch",
     "location": "Sydney, Australia",
+    "location2": "S\u00e3o Paulo, Brazil",
     "copyright": "\u00a9 {year} Engram Ventures Pty Ltd. All rights reserved.",
     "abn": "ABN 65 696 046 045"
   },
@@ -146,10 +147,8 @@
     "directContact": "Direct contact",
     "basedIn": "Based in",
     "basedInValue": "Sydney, Australia",
-    "availableGlobally": "Available globally",
-    "responseTime": "Response time",
-    "responseTimeValue": "Within one business day (AEST)",
-    "brandQuote": "\u201cStrategy that sticks.\u201d",
+    "basedInValue2": "S\u00e3o Paulo, Brazil",
+            "brandQuote": "\u201cStrategy that sticks.\u201d",
     "brandName": "ENGRAM VENTURES"
   },
   "Metadata": {
