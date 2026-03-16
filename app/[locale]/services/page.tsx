@@ -97,7 +97,7 @@ export default async function ServicesPage({ params }: Props) {
           <h1 className="font-display text-6xl md:text-7xl font-light text-parchment leading-tight max-w-xl">
             {t("heading")}
           </h1>
-          <p className="mt-6 font-body text-lg font-light text-parchment/60 max-w-lg leading-relaxed">
+          <p className="mt-6 font-body text-lg font-light text-parchment/80 max-w-lg leading-relaxed">
             {t("subheading")}
           </p>
         </div>
@@ -122,14 +122,14 @@ export default async function ServicesPage({ params }: Props) {
                     <h2 className="font-display text-3xl font-light mb-3 text-parchment">
                       {s.name}
                     </h2>
-                    <p className="font-body text-sm font-light italic mb-8 text-parchment/60">
+                    <p className="font-body text-sm font-light italic mb-8 text-parchment/75">
                       {s.tagline}
                     </p>
                     <div>
                       <div className="section-label mb-3 text-ember/70">
                         {t("bestFor")}
                       </div>
-                      <p className="font-body text-sm font-light leading-relaxed text-parchment/60">
+                      <p className="font-body text-sm font-light leading-relaxed text-parchment/75">
                         {s.audience}
                       </p>
                     </div>
@@ -137,7 +137,7 @@ export default async function ServicesPage({ params }: Props) {
 
                   {/* Right panel */}
                   <div className="md:col-span-3 p-10">
-                    <p className="font-body text-base font-light text-slate-warm leading-relaxed mb-10">
+                    <p className="font-body text-base font-light text-slate-dark leading-relaxed mb-10">
                       {s.description}
                     </p>
                     <div>
@@ -168,7 +168,7 @@ export default async function ServicesPage({ params }: Props) {
             <h2 className="font-display text-4xl font-light text-navy mb-3">
               {t("ctaHeading")}
             </h2>
-            <p className="font-body text-base font-light text-slate-warm">
+            <p className="font-body text-base font-light text-slate-dark">
               {t("ctaDescription")}
             </p>
           </div>

@@ -107,7 +107,7 @@ export default async function Home({ params }: Props) {
                 <h3 className="font-display text-2xl font-light text-navy mb-4 group-hover:text-ember transition-colors">
                   {s.name}
                 </h3>
-                <p className="font-body text-sm font-light text-slate-warm leading-relaxed">
+                <p className="font-body text-sm font-light text-slate-dark leading-relaxed">
                   {s.desc}
                 </p>
                 <div className="mt-8 font-body text-xs text-ember opacity-0 group-hover:opacity-100 transition-opacity tracking-wide">
@@ -128,10 +128,10 @@ export default async function Home({ params }: Props) {
               <h2 className="section-heading mb-6">
                 {t("aboutHeading")}
               </h2>
-              <p className="font-body text-base font-light text-slate-warm leading-relaxed mb-6">
+              <p className="font-body text-base font-light text-slate-dark leading-relaxed mb-6">
                 {t("aboutP1")}
               </p>
-              <p className="font-body text-base font-light text-slate-warm leading-relaxed mb-8">
+              <p className="font-body text-base font-light text-slate-dark leading-relaxed mb-8">
                 {t("aboutP2")}
               </p>
               <Link href="/about" className="btn-outline">
@@ -147,7 +147,7 @@ export default async function Home({ params }: Props) {
                   </blockquote>
                   <div className="mt-8 flex items-center gap-3">
                     <div className="w-8 h-px bg-ember" />
-                    <span className="font-body text-xs font-light text-slate-warm tracking-wide">
+                    <span className="font-body text-xs font-light text-slate-dark tracking-wide">
                       {t("aboutQuoteAttr")}
                     </span>
                   </div>
@@ -166,7 +166,7 @@ export default async function Home({ params }: Props) {
           <h2 className="font-display text-5xl md:text-6xl font-light text-parchment mb-8">
             {t("ctaHeading")}
           </h2>
-          <p className="font-body text-base font-light text-parchment/60 max-w-lg mx-auto mb-12 leading-relaxed">
+          <p className="font-body text-base font-light text-parchment/80 max-w-lg mx-auto mb-12 leading-relaxed">
             {t("ctaDescription")}
           </p>
           <Link href="/contact" className="btn-primary">

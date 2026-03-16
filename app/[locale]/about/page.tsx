@@ -69,7 +69,7 @@ export default async function AboutPage({ params }: Props) {
               <h2 className="font-display text-4xl font-light text-navy mb-8 leading-tight">
                 {t("storyHeading")}
               </h2>
-              <div className="space-y-5 font-body text-base font-light text-slate-warm leading-relaxed">
+              <div className="space-y-5 font-body text-base font-light text-slate-dark leading-relaxed">
                 <p>{t("storyP1")}</p>
                 <p>{t("storyP2")}</p>
                 <p>{t("storyP3")}</p>
@@ -94,7 +94,7 @@ export default async function AboutPage({ params }: Props) {
               </div>
 
               <div className="section-label mb-3">{t("andreGallo")}</div>
-              <p className="font-body text-sm font-light text-slate-warm mb-6">
+              <p className="font-body text-sm font-light text-slate-dark mb-6">
                 {t("founderCeo")}
               </p>
               <ul className="space-y-4">
@@ -126,7 +126,7 @@ export default async function AboutPage({ params }: Props) {
                 <h3 className="font-display text-xl font-light text-navy mb-3">
                   {v.name}
                 </h3>
-                <p className="font-body text-sm font-light text-slate-warm leading-relaxed">
+                <p className="font-body text-sm font-light text-slate-dark leading-relaxed">
                   {v.desc}
                 </p>
               </div>
@@ -141,7 +141,7 @@ export default async function AboutPage({ params }: Props) {
           <h2 className="font-display text-4xl md:text-5xl font-light text-parchment mb-6">
             {t("ctaHeading")}
           </h2>
-          <p className="font-body text-base font-light text-parchment/60 max-w-md mx-auto mb-10 leading-relaxed">
+          <p className="font-body text-base font-light text-parchment/80 max-w-md mx-auto mb-10 leading-relaxed">
             {t("ctaDescription")}
           </p>
           <Link href="/contact" className="btn-primary">

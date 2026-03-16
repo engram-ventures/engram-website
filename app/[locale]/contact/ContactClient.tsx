@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 type FormState = "idle" | "loading" | "success" | "error";
 
 const inputClass =
-  "w-full bg-white border border-parchment-dark rounded-xs px-4 py-3 font-body text-sm font-light text-navy placeholder:text-slate-warm/60 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 transition-colors";
+  "w-full bg-white border border-parchment-dark rounded-xs px-4 py-3 font-body text-sm font-light text-navy placeholder:text-slate-dark/70 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 transition-colors";
 
 export default function ContactClient() {
   const t = useTranslations("Contact");
@@ -55,7 +55,7 @@ export default function ContactClient() {
           <h1 className="font-display text-6xl md:text-7xl font-light text-parchment leading-tight max-w-xl">
             {t("heading")}
           </h1>
-          <p className="mt-6 font-body text-lg font-light text-parchment/60 max-w-lg leading-relaxed">
+          <p className="mt-6 font-body text-lg font-light text-parchment/80 max-w-lg leading-relaxed">
             {t("subheading")}
           </p>
         </div>
@@ -74,7 +74,7 @@ export default function ContactClient() {
                     <h2 className="font-display text-3xl font-light text-navy mb-4">
                       {t("successHeading")}
                     </h2>
-                    <p className="font-body text-base font-light text-slate-warm leading-relaxed">
+                    <p className="font-body text-base font-light text-slate-dark leading-relaxed">
                       {t("successMessage")}
                     </p>
                   </div>
@@ -235,7 +235,7 @@ export default function ContactClient() {
                 <div className="font-display text-2xl font-light text-parchment italic leading-snug mb-6">
                   {t("brandQuote")}
                 </div>
-                <div className="font-body text-xs font-light text-parchment/50 tracking-wide">
+                <div className="font-body text-xs font-light text-parchment/70 tracking-wide">
                   {t("brandName")}
                 </div>
               </div>

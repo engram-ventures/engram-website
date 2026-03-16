@@ -22,9 +22,9 @@ export default function LanguageSwitcher() {
       aria-label={t("switchTo", { language: otherLabel })}
       className="flex items-center gap-1 font-body text-xs tracking-wide cursor-pointer focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 focus-visible:outline-hidden rounded-xs"
     >
-      <span className={locale === "en" ? "font-medium" : "opacity-50"}>EN</span>
-      <span className="opacity-30">/</span>
-      <span className={locale === "pt-BR" ? "font-medium" : "opacity-50"}>PT</span>
+      <span className={locale === "en" ? "font-medium" : "opacity-70"}>EN</span>
+      <span className="opacity-60">/</span>
+      <span className={locale === "pt-BR" ? "font-medium" : "opacity-70"}>PT</span>
     </button>
   );
 }

@@ -13,7 +13,7 @@ export default async function Footer() {
   ];
 
   return (
-    <footer className="bg-navy text-parchment/60">
+    <footer className="bg-navy text-parchment/80">
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
@@ -37,7 +37,7 @@ export default async function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="font-body text-sm font-light text-parchment/60 hover:text-parchment transition-colors focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 focus-visible:outline-hidden rounded-xs"
+                  className="font-body text-sm font-light text-parchment/80 hover:text-parchment transition-colors focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 focus-visible:outline-hidden rounded-xs"
                 >
                   {link.label}
                 </Link>
