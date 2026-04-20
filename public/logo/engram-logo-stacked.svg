@@ -1,0 +1,29 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Engram Ventures — Primary Stacked Logo -->
+
+  <!-- Monogram: Stylised E with shifting bars -->
+  <g transform="translate(168, 20)">
+    <rect x="0" y="0" width="5" height="80" fill="#1C2B3A" rx="1"/>
+    <rect x="0" y="0" width="53" height="5" fill="#1C2B3A" rx="1"/>
+    <rect x="11" y="37.5" width="42" height="5" fill="#C96A3A" rx="1"/>
+    <rect x="17" y="75" width="36" height="5" fill="#1C2B3A" rx="1"/>
+  </g>
+
+  <!-- ENGRAM wordmark -->
+  <text x="200" y="155" text-anchor="middle"
+        font-family="'Cormorant Garamond', 'Garamond', 'Georgia', serif"
+        font-size="58" font-weight="400" letter-spacing="12" fill="#1C2B3A">ENGRAM</text>
+
+  <!-- VENTURES sub-mark -->
+  <text x="200" y="190" text-anchor="middle"
+        font-family="'Jost', 'Montserrat', 'Helvetica Neue', sans-serif"
+        font-size="16" font-weight="400" letter-spacing="9" fill="#6B7A8D">VENTURES</text>
+
+  <!-- Accent line -->
+  <line x1="140" y1="208" x2="260" y2="208" stroke="#C96A3A" stroke-width="1.2"/>
+
+  <!-- Tagline -->
+  <text x="200" y="236" text-anchor="middle"
+        font-family="'Cormorant Garamond', 'Garamond', 'Georgia', serif"
+        font-size="15" font-weight="300" font-style="italic" letter-spacing="1.5" fill="#6B7A8D">Strategy that sticks.</text>
+</svg>

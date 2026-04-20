@@ -18,12 +18,14 @@ export default async function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <div className="font-display text-2xl font-light tracking-[0.14em] text-parchment mb-1">
-              ENGRAM
-            </div>
-            <div className="font-body text-[9px] font-light tracking-[0.32em] text-ember mb-5">
-              VENTURES
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element -- SVG logo; next/image does not optimize SVGs */}
+            <img
+              src="/logo/engram-logo-stacked-reversed-notag.svg"
+              alt="Engram Ventures"
+              width={160}
+              height={84}
+              className="h-20 w-auto mb-5 -ml-4"
+            />
             <p className="font-body text-sm font-light leading-relaxed">
               {t("tagline")}
             </p>

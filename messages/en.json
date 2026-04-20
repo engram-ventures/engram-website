@@ -1,7 +1,5 @@
 {
   "Navigation": {
-    "engram": "ENGRAM",
-    "ventures": "VENTURES",
     "services": "Services",
     "about": "About",
     "contact": "Contact",
@@ -42,7 +40,7 @@
     "aboutP1": "Engram Ventures was founded by a technologist who has spent 23 years inside enterprise systems, scaleup product teams, and cloud infrastructure \u2014 and who believes the gap between AI potential and AI execution is a leadership problem, not a technology one.",
     "aboutP2": "We work best when we\u2019re in the room \u2014 embedded with your team, accountable to your outcomes, and honest about what matters.",
     "ourStory": "Our story",
-    "aboutQuote": "\u201cThe gap between what AI can do and what most teams actually ship isn\u2019t a technology problem \u2014 it\u2019s a mindset and culture one.\u201d",
+    "aboutQuote": "\u201cThe gap between what AI can do and what most teams actually ship isn\u2019t a technology problem \u2014 it\u2019s a mindset one.\u201d",
     "aboutQuoteAttr": "Engram Ventures",
     "ctaLabel": "Ready to start?",
     "ctaHeading": "Let\u2019s work together",
