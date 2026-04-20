@@ -32,11 +32,11 @@ export default async function VariantStructured({ locale }: Props) {
             {t("subheading")}
           </p>
           <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 font-body text-sm font-light text-parchment/60">
-            <span>{t("stat1Value")} value</span>
+            <span>{t("stat1Value")} {t("heroStripValue")}</span>
             <span aria-hidden>·</span>
-            <span>{t("stat2Value")} ventures</span>
+            <span>{t("stat2Value")} {t("heroStripVentures")}</span>
             <span aria-hidden>·</span>
-            <span>{t("stat3Value")} countries</span>
+            <span>{t("stat3Value")} {t("heroStripCountries")}</span>
           </div>
         </div>
       </section>
