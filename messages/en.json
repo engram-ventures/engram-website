@@ -1,6 +1,7 @@
 {
   "Navigation": {
     "services": "Services",
+    "trackRecord": "Track Record",
     "about": "About",
     "contact": "Contact",
     "getInTouch": "Get in touch",
@@ -11,6 +12,7 @@
     "navigation": "Navigation",
     "home": "Home",
     "services": "Services",
+    "trackRecord": "Track Record",
     "about": "About",
     "contact": "Contact",
     "getInTouch": "Get in touch",
@@ -54,6 +56,7 @@
     "storyHeading": "Why Engram Ventures exists",
     "storyP1": "The name Engram comes from neuroscience \u2014 a memory trace, the physical mark that experience leaves in the brain. It\u2019s how we think about good work: it should leave something lasting behind. Not a slide deck, but real capability.",
     "storyP2": "I\u2019m Andre Gallo. I founded Engram Ventures after two decades inside enterprise technology \u2014 as an architect, as a CTO, and as someone who has seen the same problems repeat themselves in different companies and different sectors. The problems are rarely technical. They\u2019re about leadership clarity, organisational alignment, and the gap between what technology can do and what an organisation is actually ready to absorb.",
+    "storyP2_5": "Prior to Engram, I spent almost a decade as co-founder and CTO of Triniti, where our team worked alongside the leadership of organisations like HSBC, DBS, NAB, eftpos, Cathay, Aspen Medical, Fidelity, Permira and the Australian Government, and helped launch 25+ digital ventures across 12 countries. All told, that work contributed to more than $700M in value created \u2014 and taught me what actually moves the needle inside large organisations, as well as what doesn't.",
     "storyP3": "AI has made that gap wider and much more expensive to get wrong. The teams that close it well are the ones that pair real engineering depth with clear thinking about what to build and why.",
     "storyP4": "That\u2019s the work I started Engram Ventures to do.",
     "andreGallo": "Andre Gallo",
@@ -77,6 +80,30 @@
     "value4Desc": "Reports and roadmaps are only useful if something changes because of them. We stay accountable to results, not just deliverables.",
     "ctaHeading": "Ready to work together?",
     "ctaDescription": "We\u2019d like to understand your situation before proposing anything.",
+    "ctaButton": "Start a conversation \u2192"
+  },
+  "TrackRecord": {
+    "label": "Track Record",
+    "heading1": "Two decades of work",
+    "heading2": "that shipped.",
+    "subheading": "Enterprise-grade, under real constraints.",
+    "attribution": "The engagements below were led by Andre Gallo during his time as co-founder and CTO of Triniti, Engram's predecessor venture. They're listed here because they represent the track record behind Engram's thinking \u2014 the same judgement, architecture and execution discipline you get when you work with us today.",
+    "statsCaption": "The work cut across sectors, but the pattern was the same: AI, platforms and products delivered inside large, regulated organisations.",
+    "stat1Value": "$700M+",
+    "stat1Label": "Value created for enterprise clients and ventures",
+    "stat2Value": "25+",
+    "stat2Label": "Digital ventures launched and scaled",
+    "stat3Value": "12+",
+    "stat3Label": "Countries across Asia-Pacific, US and Australia",
+    "stat4Value": "8+",
+    "stat4Label": "Industries, from financial services to healthcare",
+    "featuredLabel": "Selected engagements",
+    "groupFinancialServices": "Financial Services & Capital Markets",
+    "groupPublicSector": "Public Sector",
+    "groupEnterprise": "Enterprise & Industry",
+    "groupVentures": "Ventures launched",
+    "ctaHeading": "Want the same discipline inside your organisation?",
+    "ctaDescription": "Engram brings this track record to AI architecture, enterprise execution, and the hard decisions in between.",
     "ctaButton": "Start a conversation \u2192"
   },
   "Services": {
@@ -157,7 +184,9 @@
     "servicesTitle": "AI Architecture, Due Diligence & DevSecOps Services",
     "servicesDescription": "AI Architecture & Planning, Technical Due Diligence, and DevSecOps & Cloud Architecture. Engram Ventures delivers embedded advisory for enterprise leaders and investors.",
     "contactTitle": "Contact \u2014 AI Engineering Advisory, Sydney Australia",
-    "contactDescription": "Get in touch with Engram Ventures. AI strategy, technical due diligence, and DevSecOps advisory for enterprise leaders and investors. Based in Sydney, Australia."
+    "contactDescription": "Get in touch with Engram Ventures. AI strategy, technical due diligence, and DevSecOps advisory for enterprise leaders and investors. Based in Sydney, Australia.",
+    "trackRecordTitle": "Track Record \u00b7 Engram Ventures",
+    "trackRecordDescription": "Two decades of enterprise AI, platform and product work \u2014 led by Andre Gallo during his time as co-founder and CTO of Triniti, Engram's predecessor venture."
   },
   "LanguageSwitcher": {
     "switchTo": "Switch to {language}",

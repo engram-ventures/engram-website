@@ -1,6 +1,7 @@
 {
   "Navigation": {
     "services": "Serviços",
+    "trackRecord": "Trajetória",
     "about": "Sobre",
     "contact": "Contato",
     "getInTouch": "Fale conosco",
@@ -11,6 +12,7 @@
     "navigation": "Navegação",
     "home": "Início",
     "services": "Serviços",
+    "trackRecord": "Trajetória",
     "about": "Sobre",
     "contact": "Contato",
     "getInTouch": "Fale conosco",
@@ -54,6 +56,7 @@
     "storyHeading": "Por que a Engram Ventures existe",
     "storyP1": "O nome Engram vem da neurociência — um traço de memória, a marca física que a experiência deixa no cérebro. É assim que pensamos sobre bom trabalho: deve deixar algo duradouro. Não uma apresentação, mas capacidade real.",
     "storyP2": "Eu sou Andre Gallo. Fundei a Engram Ventures após duas décadas dentro da tecnologia corporativa — como arquiteto, como CTO e como alguém que viu os mesmos problemas se repetirem em diferentes empresas e diferentes setores. Os problemas raramente são técnicos. São sobre clareza de liderança, alinhamento organizacional e a lacuna entre o que a tecnologia pode fazer e o que uma organização está realmente preparada para absorver.",
+    "storyP2_5": "Antes da Engram, passei quase uma década como cofundador e CTO da Triniti, onde nosso time trabalhou ao lado da liderança de organizações como HSBC, DBS, NAB, eftpos, Cathay, Aspen Medical, Fidelity, Permira e o Governo Australiano, e ajudamos a lançar mais de 25 ventures digitais em 12 países. No total, esse trabalho contribuiu com mais de US$ 700M em valor gerado — e me ensinou o que de fato move a agulha dentro de grandes organizações, e também o que não move.",
     "storyP3": "A IA tornou essa lacuna mais ampla e muito mais cara de errar. As equipes que a fecham bem são aquelas que combinam profundidade real de engenharia com pensamento claro sobre o que construir e por quê.",
     "storyP4": "Foi para isso que fundei a Engram Ventures.",
     "andreGallo": "Andre Gallo",
@@ -77,6 +80,30 @@
     "value4Desc": "Relatórios e roadmaps só são úteis se algo mudar por causa deles. Permanecemos responsáveis por resultados, não apenas por entregáveis.",
     "ctaHeading": "Pronto para trabalhar juntos?",
     "ctaDescription": "Gostaríamos de entender sua situação antes de propor qualquer coisa.",
+    "ctaButton": "Iniciar uma conversa →"
+  },
+  "TrackRecord": {
+    "label": "Trajetória",
+    "heading1": "Duas décadas de trabalho",
+    "heading2": "que chegou à produção.",
+    "subheading": "Nível corporativo, sob restrições reais.",
+    "attribution": "As iniciativas abaixo foram lideradas por Andre Gallo durante seu período como cofundador e CTO da Triniti, empresa que antecedeu a Engram. Elas estão aqui porque representam o histórico por trás do pensamento da Engram — o mesmo critério, arquitetura e disciplina de execução que você recebe ao trabalhar conosco hoje.",
+    "statsCaption": "O trabalho atravessou setores, mas o padrão era o mesmo: IA, plataformas e produtos entregues dentro de grandes organizações reguladas.",
+    "stat1Value": "US$ 700M+",
+    "stat1Label": "Valor gerado para clientes corporativos e ventures",
+    "stat2Value": "25+",
+    "stat2Label": "Ventures digitais lançadas e escaladas",
+    "stat3Value": "12+",
+    "stat3Label": "Países na Ásia-Pacífico, EUA e Austrália",
+    "stat4Value": "8+",
+    "stat4Label": "Indústrias, de serviços financeiros a saúde",
+    "featuredLabel": "Projetos selecionados",
+    "groupFinancialServices": "Serviços Financeiros e Mercado de Capitais",
+    "groupPublicSector": "Setor Público",
+    "groupEnterprise": "Corporativo e Indústria",
+    "groupVentures": "Ventures lançadas",
+    "ctaHeading": "Quer a mesma disciplina dentro da sua organização?",
+    "ctaDescription": "A Engram leva esse histórico para arquitetura de IA, execução corporativa e as decisões difíceis no meio do caminho.",
     "ctaButton": "Iniciar uma conversa →"
   },
   "Services": {
@@ -157,7 +184,9 @@
     "servicesTitle": "Serviços de Arquitetura de IA, Due Diligence & DevSecOps",
     "servicesDescription": "Arquitetura & Planejamento de IA, Due Diligence Técnica e DevSecOps & Arquitetura Cloud. A Engram Ventures oferece consultoria integrada para líderes corporativos e investidores.",
     "contactTitle": "Contato — Consultoria de Engenharia de IA, Sydney Austrália",
-    "contactDescription": "Entre em contato com a Engram Ventures. Estratégia de IA, due diligence técnica e consultoria DevSecOps para líderes corporativos e investidores. Baseada em Sydney, Austrália."
+    "contactDescription": "Entre em contato com a Engram Ventures. Estratégia de IA, due diligence técnica e consultoria DevSecOps para líderes corporativos e investidores. Baseada em Sydney, Austrália.",
+    "trackRecordTitle": "Trajetória · Engram Ventures",
+    "trackRecordDescription": "Duas décadas de trabalho corporativo em IA, plataformas e produtos — liderado por Andre Gallo durante seu período como cofundador e CTO da Triniti, empresa que antecedeu a Engram."
   },
   "LanguageSwitcher": {
     "switchTo": "Mudar para {language}",
