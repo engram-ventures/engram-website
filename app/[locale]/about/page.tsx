@@ -72,6 +72,7 @@ export default async function AboutPage({ params }: Props) {
               <div className="space-y-5 font-body text-base font-light text-slate-dark leading-relaxed">
                 <p>{t("storyP1")}</p>
                 <p>{t("storyP2")}</p>
+                <p>{t("storyP2_5")}</p>
                 <p>{t("storyP3")}</p>
                 <p>{t("storyP4")}</p>
               </div>
