@@ -15,6 +15,7 @@ export default function Navigation() {
 
   const links = [
     { href: "/services" as const, label: t("services") },
+    { href: "/track-record" as const, label: t("trackRecord") },
     { href: "/about" as const, label: t("about") },
     { href: "/contact" as const, label: t("contact") },
   ];
