@@ -108,6 +108,13 @@ export async function generateMetadata({
         "pt-BR": `${siteUrl}/pt-BR`,
       },
     },
+    icons: {
+      icon: [
+        { url: "/logo/engram-favicon.svg", type: "image/svg+xml" },
+      ],
+      shortcut: "/logo/engram-favicon.svg",
+      apple: "/logo/engram-monogram.svg",
+    },
   };
 }
 
@@ -122,6 +129,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html
       lang={locale}
+      data-scroll-behavior="smooth"
       className={`${cormorant.variable} ${jost.variable} ${jetbrains.variable}`}
     >
       <head>

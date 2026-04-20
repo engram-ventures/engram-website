@@ -31,33 +31,29 @@ export default function Navigation() {
     setMenuOpen(false);
   }, [pathname]);
 
-  const isHome = pathname === "/";
-
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300 ${
-        scrolled || !isHome
+        scrolled
           ? "bg-parchment/95 backdrop-blur-xs border-b border-parchment-dark"
           : "bg-transparent"
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex flex-col leading-none group">
-          <span
-            className={`font-display text-xl font-light tracking-[0.14em] transition-colors ${
-              scrolled || !isHome ? "text-navy" : "text-parchment"
-            }`}
-          >
-            {t("engram")}
-          </span>
-          <span
-            className={`font-body text-[9px] font-light tracking-[0.32em] transition-colors ${
-              scrolled || !isHome ? "text-ember" : "text-ember"
-            }`}
-          >
-            {t("ventures")}
-          </span>
+        <Link href="/" aria-label="Engram Ventures — home" className="block">
+          {/* eslint-disable-next-line @next/next/no-img-element -- SVG logo; next/image does not optimize SVGs */}
+          <img
+            src={
+              scrolled
+                ? "/logo/engram-logo-horizontal.svg"
+                : "/logo/engram-logo-horizontal-reversed.svg"
+            }
+            alt="Engram Ventures"
+            width={260}
+            height={40}
+            className="h-10 w-auto"
+          />
         </Link>
 
         {/* Desktop links */}
@@ -69,7 +65,7 @@ export default function Navigation() {
               className={`font-body text-sm font-light tracking-wide transition-colors focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 focus-visible:outline-hidden rounded-xs ${
                 pathname === link.href
                   ? "text-ember"
-                  : scrolled || !isHome
+                  : scrolled
                   ? "text-navy hover:text-ember"
                   : "text-parchment/80 hover:text-parchment"
               }`}
@@ -77,7 +73,7 @@ export default function Navigation() {
               {link.label}
             </Link>
           ))}
-          <div className={scrolled || !isHome ? "text-navy" : "text-parchment"}>
+          <div className={scrolled ? "text-navy" : "text-parchment"}>
             <LanguageSwitcher />
           </div>
           <Link href="/contact" className="btn-primary text-xs py-2 px-4">
@@ -95,7 +91,7 @@ export default function Navigation() {
             <span
               key={i}
               className={`block w-5 h-px transition-[transform,opacity] duration-200 ${
-                scrolled || !isHome ? "bg-navy" : "bg-parchment"
+                scrolled ? "bg-navy" : "bg-parchment"
               } ${
                 menuOpen && i === 0
                   ? "rotate-45 translate-y-2"
