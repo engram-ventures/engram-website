@@ -29,12 +29,13 @@ export default async function VariantEditorial({ locale }: Props) {
 
   return (
     <>
-      {/* Hero — compressed */}
+      {/* Hero */}
       <section className="bg-navy pt-32 pb-24">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="section-label text-ember mb-5">{t("label")}</div>
-          <h1 className="font-display text-5xl md:text-6xl font-light text-parchment leading-tight max-w-3xl">
-            {t("heading1")}{" "}
+          <div className="section-label text-ember mb-6">{t("label")}</div>
+          <h1 className="font-display text-6xl md:text-7xl font-light text-parchment leading-tight max-w-xl">
+            {t("heading1")}
+            <br />
             <em className="font-light text-ember">{t("heading2")}</em>
           </h1>
         </div>
