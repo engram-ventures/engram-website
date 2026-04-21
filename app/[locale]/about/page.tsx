@@ -40,6 +40,8 @@ export default async function AboutPage({ params }: Props) {
     t("credential6"),
   ];
 
+  const education = [t("bioEdu1"), t("bioEdu2"), t("bioEdu3")];
+
   const values = [
     { name: t("value1Name"), desc: t("value1Desc") },
     { name: t("value2Name"), desc: t("value2Desc") },
@@ -112,8 +114,73 @@ export default async function AboutPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Values */}
+      {/* Bio — Andre, in brief */}
       <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-14">
+            <div className="section-label mb-4">{t("bioLabel")}</div>
+            <h2 className="section-heading">{t("bioHeading")}</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {/* Narrative */}
+            <div className="md:col-span-2 space-y-10">
+              <p className="font-body text-base font-light text-slate-dark leading-relaxed">
+                {t("bioLead")}
+              </p>
+
+              <div>
+                <h3 className="font-display text-2xl font-light text-navy mb-4">
+                  {t("bioBeforeTrinitiHeading")}
+                </h3>
+                <p className="font-body text-base font-light text-slate-dark leading-relaxed">
+                  {t("bioBeforeTriniti")}
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-display text-2xl font-light text-navy mb-4">
+                  {t("bioFocusHeading")}
+                </h3>
+                <p className="font-body text-base font-light text-slate-dark leading-relaxed">
+                  {t("bioFocusBody")}
+                </p>
+              </div>
+            </div>
+
+            {/* Structured data */}
+            <div className="space-y-10 md:border-l md:border-parchment-dark md:pl-10">
+              <div>
+                <div className="section-label mb-5">
+                  {t("bioEducationHeading")}
+                </div>
+                <ul className="space-y-4">
+                  {education.map((e) => (
+                    <li key={e} className="flex items-start gap-4">
+                      <span className="text-ember mt-1 text-xs shrink-0">◆</span>
+                      <span className="font-body text-sm font-light text-navy leading-relaxed">
+                        {e}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <div className="section-label mb-3">
+                  {t("bioLanguagesHeading")}
+                </div>
+                <p className="font-body text-sm font-light text-navy">
+                  {t("bioLanguages")}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="py-24 bg-parchment">
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-14">
             <div className="section-label mb-4">{t("valuesLabel")}</div>
