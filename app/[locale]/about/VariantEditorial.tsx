@@ -70,12 +70,6 @@ export default async function VariantEditorial({ locale }: Props) {
                     </h3>
                     <p>{t("bioBeforeTriniti")}</p>
                   </div>
-                  <div>
-                    <h3 className="font-display text-2xl font-light text-navy mb-4">
-                      {t("bioFocusHeading")}
-                    </h3>
-                    <p>{t("bioFocusBody")}</p>
-                  </div>
                 </div>
               </div>
             </div>
