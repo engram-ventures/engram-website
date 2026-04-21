@@ -9,16 +9,9 @@ type Props = {
 export default async function VariantEditorial({ locale }: Props) {
   const t = await getTranslations({ locale, namespace: "About" });
 
-  const credentials = [
-    t("credential1"),
-    t("credential2"),
-    t("credential3"),
-    t("credential4"),
-    t("credential5"),
-    t("credential6"),
-  ];
-
   const education = [t("bioEdu1"), t("bioEdu2"), t("bioEdu3")];
+  const certifications = [t("bioCert1"), t("bioCert2")];
+  const expertise = [t("bioExpertise1"), t("bioExpertise2")];
 
   const values = [
     { name: t("value1Name"), desc: t("value1Desc") },
@@ -117,14 +110,35 @@ export default async function VariantEditorial({ locale }: Props) {
                 </div>
 
                 <div>
+                  <div className="section-label mb-4">
+                    {t("bioCertificationsHeading")}
+                  </div>
                   <ul className="space-y-3">
-                    {credentials.map((c) => (
+                    {certifications.map((c) => (
                       <li key={c} className="flex items-start gap-3">
                         <span className="text-ember mt-1 text-xs shrink-0">
                           ◆
                         </span>
                         <span className="font-body text-xs font-light text-navy leading-relaxed">
                           {c}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <div className="section-label mb-4">
+                    {t("bioExpertiseHeading")}
+                  </div>
+                  <ul className="space-y-3">
+                    {expertise.map((e) => (
+                      <li key={e} className="flex items-start gap-3">
+                        <span className="text-ember mt-1 text-xs shrink-0">
+                          ◆
+                        </span>
+                        <span className="font-body text-xs font-light text-navy leading-relaxed">
+                          {e}
                         </span>
                       </li>
                     ))}
