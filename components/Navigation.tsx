@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
-import LanguageSwitcher from "./LanguageSwitcher";
 
 const hamburgerLines = [0, 1, 2] as const;
 
@@ -15,6 +14,7 @@ export default function Navigation() {
 
   const links = [
     { href: "/services" as const, label: t("services") },
+    { href: "/track-record" as const, label: t("trackRecord") },
     { href: "/about" as const, label: t("about") },
     { href: "/contact" as const, label: t("contact") },
   ];
@@ -73,9 +73,6 @@ export default function Navigation() {
               {link.label}
             </Link>
           ))}
-          <div className={scrolled ? "text-navy" : "text-parchment"}>
-            <LanguageSwitcher />
-          </div>
           <Link href="/contact" className="btn-primary text-xs py-2 px-4">
             {t("getInTouch")}
           </Link>
@@ -123,9 +120,6 @@ export default function Navigation() {
           <Link href="/contact" className="btn-primary self-start mt-2">
             {t("getInTouch")}
           </Link>
-          <div className="text-navy">
-            <LanguageSwitcher />
-          </div>
         </div>
       )}
     </header>
