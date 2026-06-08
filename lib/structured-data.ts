@@ -49,12 +49,12 @@ export function getOrganizationJsonLd(locale: string) {
 
 const serviceDescriptions = {
   en: [
-    "Turning AI ambitions into systems that ship. Architecture decisions, build-or-buy analysis, and implementation plans your team can actually follow.",
+    "Production-grade AI architecture: reference architectures, evaluation harnesses, observability and rollback design. Engineering rigour for AI systems that survive production.",
     "For investors who need to know what's really under the hood. Architecture reviews, codebase health, team assessments, and honest risk scoring.",
     "Security-first engineering foundations. Cloud architecture, CI/CD hardening, compliance automation, and AI-native development workflows.",
   ],
   "pt-BR": [
-    "Transformando ambições de IA em sistemas que entregam. Decisões de arquitetura, análise de construir ou comprar e planos de implementação que sua equipe pode realmente seguir.",
+    "Arquitetura de IA pronta para produção: arquiteturas de referência, harnesses de avaliação, design de observabilidade e rollback. Rigor de engenharia para sistemas de IA que sobrevivem em produção.",
     "Para investidores que precisam saber o que realmente está por baixo do capô. Revisões de arquitetura, saúde do código, avaliações de equipe e pontuação de risco honesta.",
     "Fundações de engenharia com segurança em primeiro lugar. Arquitetura de nuvem, hardening de CI/CD, automação de compliance e fluxos de desenvolvimento nativos de IA.",
   ],
@@ -69,7 +69,7 @@ export function getServicesJsonLd(locale: string) {
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      name: "AI Architecture & Planning",
+      name: "Production-Grade AI Architecture",
       description: descs[0],
       inLanguage: locale,
       provider: {
