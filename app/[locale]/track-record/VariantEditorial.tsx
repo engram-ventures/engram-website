@@ -1,7 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import LogoPlaceholder from "@/components/LogoPlaceholder";
-import { featuredLogos, sectorGroups } from "./content";
+import { clientSectors } from "./content";
 
 type Props = {
   locale: string;
@@ -34,15 +33,6 @@ export default async function VariantEditorial({ locale }: Props) {
         </div>
       </section>
 
-      {/* Attribution pull-quote */}
-      <section className="bg-parchment py-20">
-        <div className="max-w-3xl mx-auto px-6">
-          <p className="font-body text-lg font-light text-slate-dark leading-relaxed italic">
-            {t("attribution")}
-          </p>
-        </div>
-      </section>
-
       {/* Impact stats — inline row */}
       <section className="bg-white py-20">
         <div className="max-w-6xl mx-auto px-6">
@@ -64,36 +54,24 @@ export default async function VariantEditorial({ locale }: Props) {
         </div>
       </section>
 
-      {/* Featured row */}
-      <section className="bg-parchment py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="section-label text-ember mb-10">{t("featuredLabel")}</div>
-          <div className="grid grid-cols-2 md:grid-cols-4 md:divide-x md:divide-parchment-dark">
-            {featuredLogos.map((name) => (
-              <div
-                key={name}
-                className="md:px-4 first:md:pl-0 last:md:pr-0 flex items-center justify-center"
-              >
-                <LogoPlaceholder name={name} size="featured" style="plain" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Logo wall — bibliography style */}
-      <section className="bg-white py-24">
+      {/* Sector wall — anonymised descriptors */}
+      <section className="bg-parchment py-24">
         <div className="max-w-6xl mx-auto px-6 space-y-14">
-          {sectorGroups.map((group) => (
+          {clientSectors.map((group) => (
             <div key={group.titleKey}>
               <div className="section-label text-ember mb-5">
                 {t(group.titleKey)}
               </div>
-              <div className="flex flex-wrap gap-x-10 gap-y-4 font-display text-lg font-light text-navy">
-                {group.logos.map((name) => (
-                  <span key={name}>{name}</span>
+              <ul className="space-y-3">
+                {group.engagementKeys.map((key) => (
+                  <li key={key} className="flex items-start gap-4">
+                    <span className="text-ember mt-2 text-xs shrink-0">◆</span>
+                    <span className="font-body text-base font-light text-navy leading-relaxed">
+                      {t(key)}
+                    </span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           ))}
         </div>

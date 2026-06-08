@@ -1,57 +1,50 @@
-export const featuredLogos = [
-  "Aspen Medical",
-  "Cathay Pacific",
-  "Tricor (Permira)",
-  "Athena",
-] as const;
-
 export type SectorGroupKey =
   | "groupFinancialServices"
   | "groupPublicSector"
   | "groupEnterprise"
   | "groupVentures";
 
-export const sectorGroups: ReadonlyArray<{
+export type EngagementKey =
+  | "engagementFs1"
+  | "engagementFs2"
+  | "engagementFs3"
+  | "engagementFs4"
+  | "engagementFs5"
+  | "engagementFs6"
+  | "engagementPs1"
+  | "engagementPs2"
+  | "engagementPs3"
+  | "engagementEnt1"
+  | "engagementEnt2"
+  | "ventureFintech"
+  | "ventureHrTech"
+  | "ventureWorkplace";
+
+export const clientSectors: ReadonlyArray<{
   titleKey: SectorGroupKey;
-  logos: ReadonlyArray<string>;
+  engagementKeys: ReadonlyArray<EngagementKey>;
 }> = [
   {
     titleKey: "groupFinancialServices",
-    logos: [
-      "DBS",
-      "NAB",
-      "HSBC",
-      "eftpos",
-      "Fidelity",
-      "CompareAsia",
-      "Tricor (Permira)",
-      "Ascentium",
+    engagementKeys: [
+      "engagementFs1",
+      "engagementFs2",
+      "engagementFs3",
+      "engagementFs4",
+      "engagementFs5",
+      "engagementFs6",
     ],
   },
   {
     titleKey: "groupPublicSector",
-    logos: [
-      "Australian Government",
-      "Transport for NSW",
-      "NSW Education",
-      "FIAL",
-    ],
+    engagementKeys: ["engagementPs1", "engagementPs2", "engagementPs3"],
   },
   {
     titleKey: "groupEnterprise",
-    logos: ["Cathay Pacific", "Aspen Medical"],
+    engagementKeys: ["engagementEnt1", "engagementEnt2"],
   },
   {
     titleKey: "groupVentures",
-    logos: [
-      "Athena",
-      "EarlyTrade",
-      "Calven",
-      "Striver",
-      "Tribe",
-      "imunis",
-      "Pointer",
-      "Training Paddock",
-    ],
+    engagementKeys: ["ventureFintech", "ventureHrTech", "ventureWorkplace"],
   },
 ];
