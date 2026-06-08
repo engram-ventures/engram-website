@@ -56,7 +56,18 @@ export default async function VariantEditorial({ locale }: Props) {
                   {t("bioHeading")}
                 </h2>
                 <div className="space-y-8 font-body text-base font-light text-slate-dark leading-relaxed">
-                  <p>{t("bioLead")}</p>
+                  <p>
+                    {t.rich("bioLead", {
+                      trackLink: (chunks) => (
+                        <Link
+                          href="/track-record"
+                          className="text-ember underline decoration-ember/30 underline-offset-4 hover:decoration-ember transition-colors"
+                        >
+                          {chunks}
+                        </Link>
+                      ),
+                    })}
+                  </p>
                   <div>
                     <h3 className="font-display text-2xl font-light text-navy mb-4">
                       {t("bioBeforeTrinitiHeading")}
