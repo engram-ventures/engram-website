@@ -2,6 +2,7 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
+import { track } from "@/lib/analytics";
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
@@ -13,6 +14,7 @@ export default function LanguageSwitcher() {
   const otherLabel = locale === "en" ? t("portuguese") : t("english");
 
   function handleSwitch() {
+    track("language_switched", { from_locale: locale, to_locale: otherLocale });
     router.replace(pathname, { locale: otherLocale });
   }
 

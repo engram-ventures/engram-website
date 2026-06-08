@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
+import CtaLink from "@/components/CtaLink";
+import ObservedSection from "@/components/ObservedSection";
 import { clientSectors } from "./content";
 
 type Props = {
@@ -58,7 +59,7 @@ export default async function VariantEditorial({ locale }: Props) {
       <section className="bg-parchment py-24">
         <div className="max-w-6xl mx-auto px-6 space-y-14">
           {clientSectors.map((group) => (
-            <div key={group.titleKey}>
+            <ObservedSection key={group.titleKey} sectionId={group.titleKey}>
               <div className="section-label text-ember mb-5">
                 {t(group.titleKey)}
               </div>
@@ -72,7 +73,7 @@ export default async function VariantEditorial({ locale }: Props) {
                   </li>
                 ))}
               </ul>
-            </div>
+            </ObservedSection>
           ))}
         </div>
       </section>
@@ -86,9 +87,14 @@ export default async function VariantEditorial({ locale }: Props) {
           <p className="font-body text-base font-light text-parchment/80 max-w-xl mb-10 leading-relaxed">
             {t("ctaDescription")}
           </p>
-          <Link href="/contact" className="btn-primary">
+          <CtaLink
+            href="/contact"
+            ctaLocation="track-record-cta"
+            ctaText={t("ctaButton")}
+            className="btn-primary"
+          >
             {t("ctaButton")}
-          </Link>
+          </CtaLink>
         </div>
       </section>
     </>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import CtaLink from "@/components/CtaLink";
 
 type Props = {
   locale: string;
@@ -201,9 +202,14 @@ export default async function VariantEditorial({ locale }: Props) {
           <p className="font-body text-base font-light text-parchment/80 max-w-md mx-auto mb-10 leading-relaxed">
             {t("ctaDescription")}
           </p>
-          <Link href="/contact" className="btn-primary">
+          <CtaLink
+            href="/contact"
+            ctaLocation="page-cta"
+            ctaText={t("ctaButton")}
+            className="btn-primary"
+          >
             {t("ctaButton")}
-          </Link>
+          </CtaLink>
         </div>
       </section>
     </>

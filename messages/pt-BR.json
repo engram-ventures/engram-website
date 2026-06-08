@@ -214,5 +214,11 @@
     "switchTo": "Mudar para {language}",
     "english": "English",
     "portuguese": "Português"
+  },
+  "Consent": {
+    "message": "Usamos ferramentas de análise para entender como os visitantes utilizam este site. Nenhum dado pessoal é coletado sem o seu consentimento.",
+    "accept": "Aceitar",
+    "decline": "Recusar",
+    "ariaLabel": "Consentimento de cookies"
   }
 }

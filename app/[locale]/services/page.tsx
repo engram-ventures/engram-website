@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
 import { getServicesJsonLd } from "@/lib/structured-data";
+import CtaLink from "@/components/CtaLink";
 
 const siteUrl = "https://engram.ventures";
 
@@ -172,9 +172,14 @@ export default async function ServicesPage({ params }: Props) {
               {t("ctaDescription")}
             </p>
           </div>
-          <Link href="/contact" className="btn-primary shrink-0">
+          <CtaLink
+            href="/contact"
+            ctaLocation="page-cta"
+            ctaText={t("ctaButton")}
+            className="btn-primary shrink-0"
+          >
             {t("ctaButton")}
-          </Link>
+          </CtaLink>
         </div>
       </section>
     </>

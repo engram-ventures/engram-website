@@ -5,6 +5,8 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import Analytics from "@/components/Analytics";
+import ConsentBanner from "@/components/ConsentBanner";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { getOrganizationJsonLd } from "@/lib/structured-data";
@@ -149,7 +151,15 @@ export default async function LocaleLayout({ children, params }: Props) {
           <Navigation />
           <main id="main-content">{children}</main>
           <Footer />
+          <ConsentBanner />
         </NextIntlClientProvider>
+        <Analytics
+          gaId={
+            process.env.NODE_ENV === "production"
+              ? process.env.NEXT_PUBLIC_GA_ID
+              : undefined
+          }
+        />
         <SpeedInsights />
       </body>
     </html>

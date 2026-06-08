@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { track } from "@/lib/analytics";
 
 type FormState = "idle" | "loading" | "success" | "error";
 
@@ -11,6 +12,7 @@ const inputClass =
 
 export default function ContactClient() {
   const t = useTranslations("Contact");
+  const locale = useLocale();
   const [formState, setFormState] = useState<FormState>("idle");
   const [form, setForm] = useState({
     name: "",
@@ -40,8 +42,22 @@ export default function ContactClient() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      setFormState(res.ok ? "success" : "error");
+      if (res.ok) {
+        track("contact_form_submitted", {
+          enquiry_type: form.type || "unspecified",
+          company_present: form.company.trim().length > 0,
+          locale,
+        });
+        setFormState("success");
+      } else {
+        track("contact_form_failed", {
+          error_type: res.status >= 500 ? "server" : "validation",
+          locale,
+        });
+        setFormState("error");
+      }
     } catch {
+      track("contact_form_failed", { error_type: "network", locale });
       setFormState("error");
     }
   };

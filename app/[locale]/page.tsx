@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import CtaLink from "@/components/CtaLink";
 
 const siteUrl = "https://engram.ventures";
 
@@ -74,10 +75,15 @@ export default async function Home({ params }: Props) {
               {t("heroDescription")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="btn-primary">
+              <CtaLink
+                href="/contact"
+                ctaLocation="hero"
+                ctaText={t("startConversation")}
+                className="btn-primary"
+              >
                 {t("startConversation")}
                 <span className="text-xs opacity-60">→</span>
-              </Link>
+              </CtaLink>
               <Link href="/services" className="btn-outline border-parchment/30 text-parchment hover:bg-parchment hover:text-navy">
                 {t("ourServices")}
               </Link>
@@ -169,10 +175,15 @@ export default async function Home({ params }: Props) {
           <p className="font-body text-base font-light text-parchment/80 max-w-lg mx-auto mb-12 leading-relaxed">
             {t("ctaDescription")}
           </p>
-          <Link href="/contact" className="btn-primary">
+          <CtaLink
+            href="/contact"
+            ctaLocation="page-cta"
+            ctaText={t("ctaButton")}
+            className="btn-primary"
+          >
             {t("ctaButton")}
             <span className="text-xs opacity-60">→</span>
-          </Link>
+          </CtaLink>
         </div>
       </section>
     </>
