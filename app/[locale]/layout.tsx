@@ -78,20 +78,11 @@ export async function generateMetadata({
       siteName: "Engram Ventures",
       title: t("homeTitle"),
       description: t("homeDescription"),
-      images: [
-        {
-          url: "/og-image.png",
-          width: 1200,
-          height: 630,
-          alt: "Engram Ventures",
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: t("homeTitle"),
       description: t("homeDescription"),
-      images: ["/og-image.png"],
     },
     robots: {
       index: true,
