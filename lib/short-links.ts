@@ -11,9 +11,8 @@
  *   utm_content = <post-slug-variant>
  */
 export const shortLinks: Readonly<Record<string, string>> = {
-  // Example (commented — uncomment + edit when first post goes live):
-  // "q3-track-record":
-  //   "https://engram.ventures/track-record?utm_source=linkedin&utm_medium=social-organic&utm_campaign=2026-h1-track-record&utm_content=post-01-due-diligence-hook",
+  "superai":
+    "https://engram.ventures/?utm_source=linkedin&utm_medium=social-organic&utm_campaign=2026-superai-launch&utm_content=intro-post",
 };
 
 export function resolveShortLink(slug: string): string | null {
