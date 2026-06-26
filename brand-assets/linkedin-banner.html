@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Engram Ventures — LinkedIn Banner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #1C2B3A; }
+
+  /* Native LinkedIn company cover: exactly 1128 x 191 (~6:1). */
+  .banner {
+    position: relative;
+    width: 1128px;
+    height: 191px;
+    overflow: hidden;
+    background: radial-gradient(120% 200% at 50% 42%, #25394e 0%, #1C2B3A 52%, #16222e 100%);
+    font-family: 'Jost', sans-serif;
+  }
+
+  /* Symmetric blueprint grid, fading from centre — "structure that holds" */
+  .grid-motif {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(245,241,235,0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(245,241,235,0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(120% 120% at 50% 50%, #000 30%, transparent 78%);
+    -webkit-mask-image: radial-gradient(120% 120% at 50% 50%, #000 30%, transparent 78%);
+  }
+
+  /* Centred content — safe under LinkedIn's mobile crop + logo corner */
+  .content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 11px;
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .rule {
+    width: 30px;
+    height: 3px;
+    background: #C96A3A;
+    border-radius: 1px;
+  }
+  .eyebrow-label {
+    color: #F5F1EB;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    padding-left: 0.3em; /* optical balance for tracking */
+  }
+
+  .headline {
+    color: #F5F1EB;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 54px;
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+  }
+
+  .subline {
+    color: #9EABB8;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+  }
+</style>
+</head>
+<body>
+  <div class="banner">
+    <div class="grid-motif"></div>
+    <div class="content">
+      <div class="eyebrow">
+        <div class="rule"></div>
+        <div class="eyebrow-label">Engram Ventures</div>
+        <div class="rule"></div>
+      </div>
+      <div class="headline">Engineering that holds.</div>
+      <div class="subline">AI capability that survives production.</div>
+    </div>
+  </div>
+</body>
+</html>
